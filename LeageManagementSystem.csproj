@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\PlayerController.cs" />
+    <Compile Include="DAL\DBConnection.cs" />
     <Compile Include="DAL\PlayerDAL.cs" />
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
