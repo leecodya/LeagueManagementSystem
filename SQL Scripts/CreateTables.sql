@@ -34,4 +34,14 @@ CREATE TABLE Round (
 		REFERENCES Player(id)
 );
 
+CREATE TABLE LeaguePlayers (
+	leagueID int NOT NULL,
+	playerID int NOT NULL
+	CONSTRAINT league_players_pk PRIMARY KEY (leagueID, playerID),
+	CONSTRAINT league_players_league_fk FOREIGN KEY (leagueID)
+		REFERENCES League(id),
+	CONSTRAINT league_players_player_fk FOREIGN KEY (playerID)
+		REFERENCES Player(id)
+);
+
 /*I did forget to include update and delete cascading when creating the tables but they have been included now*/

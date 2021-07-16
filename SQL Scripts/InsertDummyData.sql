@@ -1,6 +1,6 @@
 insert into League
 values
-('HCDGC Spring  2021', '2021-03-25', '2021-05-13', 'Central Pines');
+('HCDGC Spring 2021', '2021-03-25', '2021-05-13', 'Central Pines');
 
 insert into Player
 values
@@ -16,3 +16,9 @@ values
 insert into Round
 values
 (1, 1, '2021-07-15', 54);
+
+insert into LeaguePlayers
+values
+(1, 1),
+(1, 2),
+(1, 3);
