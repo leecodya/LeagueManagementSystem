@@ -8,3 +8,8 @@ C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\
 C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeageManagementSystem.exe
 C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeageManagementSystem.pdb
 C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeagueManagementSystem.Login.resources
+C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\bin\Debug\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\bin\Debug\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\bin\Debug\Microsoft.AspNetCore.Cryptography.Internal.xml
+C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\bin\Debug\Microsoft.AspNetCore.Cryptography.KeyDerivation.xml
+C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeagueManagementSystem.csproj.CopyComplete

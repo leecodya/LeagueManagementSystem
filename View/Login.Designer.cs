@@ -35,6 +35,7 @@
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
             this.guestLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.errorLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -78,6 +79,7 @@
             // 
             this.passwordTextBox.Location = new System.Drawing.Point(379, 243);
             this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(226, 22);
             this.passwordTextBox.TabIndex = 4;
             // 
@@ -89,6 +91,7 @@
             this.loginButton.TabIndex = 5;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // guestLinkLabel
             // 
@@ -100,11 +103,20 @@
             this.guestLinkLabel.TabStop = true;
             this.guestLinkLabel.Text = "Continue as guest";
             // 
+            // errorLabel
+            // 
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.Location = new System.Drawing.Point(366, 367);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(0, 17);
+            this.errorLabel.TabIndex = 7;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 514);
+            this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.guestLinkLabel);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.passwordTextBox);
@@ -132,6 +144,7 @@
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.LinkLabel guestLinkLabel;
+        private System.Windows.Forms.Label errorLabel;
     }
 }
 
