@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace LeagueManagementSystem.Model
 {
+    /// <summary>
+    /// League model class
+    /// </summary>
     class League
     {
         public int ID { get; set; }
