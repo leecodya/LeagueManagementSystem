@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\LeagueController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\PlayerController.cs" />
     <Compile Include="DAL\DBConnection.cs" />
