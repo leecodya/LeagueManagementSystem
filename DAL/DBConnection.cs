@@ -14,7 +14,7 @@ namespace LeageManagementSystem.DAL
         public static SqlConnection GetConnection()
         {
             string connectionString =
-                "Data Source=localhost;Initial Catalog= LeageDatabase;" + 
+                "Data Source=localhost;Initial Catalog= LeagueDatabase;" + 
                 "Integrated Security=True";
 
             SqlConnection connection = new SqlConnection(connectionString);

@@ -1,3 +1,5 @@
+USE LeagueDatabase;
+
 CREATE TABLE Player (
 	id int IDENTITY(1,1) PRIMARY KEY,
     firstName varchar(255) NOT NULL,
@@ -12,6 +14,8 @@ CREATE TABLE LMSUser (
 	privileges char(7) NOT NULL,
 	playerID int
 	CONSTRAINT lms_user_player_fk FOREIGN KEY (playerID) REFERENCES Player(id)
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
 );
 
 CREATE TABLE League (
@@ -29,9 +33,13 @@ CREATE TABLE Round (
 	score int
 	CONSTRAINT round_pk PRIMARY KEY (leagueID, playerID, dateOfRound),
 	CONSTRAINT round_league_fk FOREIGN KEY (leagueID)
-		REFERENCES League(id),
+		REFERENCES League(id)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE,
 	CONSTRAINT round_player_fk FOREIGN KEY (playerID)
 		REFERENCES Player(id)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE
 );
 
 CREATE TABLE LeaguePlayers (
@@ -39,9 +47,11 @@ CREATE TABLE LeaguePlayers (
 	playerID int NOT NULL
 	CONSTRAINT league_players_pk PRIMARY KEY (leagueID, playerID),
 	CONSTRAINT league_players_league_fk FOREIGN KEY (leagueID)
-		REFERENCES League(id),
+		REFERENCES League(id)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE,
 	CONSTRAINT league_players_player_fk FOREIGN KEY (playerID)
 		REFERENCES Player(id)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE
 );
-
-/*I did forget to include update and delete cascading when creating the tables but they have been included now*/
