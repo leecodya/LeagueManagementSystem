@@ -35,7 +35,6 @@
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
             this.guestLinkLabel = new System.Windows.Forms.LinkLabel();
-            this.leagueComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -101,21 +100,11 @@
             this.guestLinkLabel.TabStop = true;
             this.guestLinkLabel.Text = "Continue as guest";
             // 
-            // leagueComboBox
-            // 
-            this.leagueComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.leagueComboBox.FormattingEnabled = true;
-            this.leagueComboBox.Location = new System.Drawing.Point(100, 176);
-            this.leagueComboBox.Name = "leagueComboBox";
-            this.leagueComboBox.Size = new System.Drawing.Size(215, 24);
-            this.leagueComboBox.TabIndex = 7;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 514);
-            this.Controls.Add(this.leagueComboBox);
             this.Controls.Add(this.guestLinkLabel);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.passwordTextBox);
@@ -143,7 +132,6 @@
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.LinkLabel guestLinkLabel;
-        private System.Windows.Forms.ComboBox leagueComboBox;
     }
 }
 

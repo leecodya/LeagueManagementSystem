@@ -20,8 +20,9 @@ namespace LeagueManagementSystem
             leagueController = new LeagueController();
 
             // Move this code to any user control that needs combo box of leagues
-            this.leagueComboBox.DataSource = leagueController.GetLeagues();
-            this.leagueComboBox.DisplayMember = "name";
+            //this.leagueComboBox.DataSource = leagueController.GetLeagues();
+            //this.leagueComboBox.DisplayMember = "name";
+            // DropDownStyle = DropDownList
         }
     }
 }
