@@ -46,11 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\PlayerController.cs" />
     <Compile Include="DAL\DBConnection.cs" />
     <Compile Include="DAL\LeagueDAL.cs" />
     <Compile Include="DAL\PlayerDAL.cs" />
     <Compile Include="Model\League.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="View\Login.cs">
       <SubType>Form</SubType>
     </Compile>
