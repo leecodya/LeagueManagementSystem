@@ -1,0 +1,10 @@
+C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\bin\Debug\LeageManagementSystem.exe.config
+C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\bin\Debug\LeageManagementSystem.exe
+C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\bin\Debug\LeageManagementSystem.pdb
+C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeagueManagementSystem.csprojAssemblyReference.cache
+C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeageManagementSystem.Properties.Resources.resources
+C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeagueManagementSystem.csproj.GenerateResource.cache
+C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeagueManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeageManagementSystem.exe
+C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeageManagementSystem.pdb
+C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeagueManagementSystem.Login.resources
