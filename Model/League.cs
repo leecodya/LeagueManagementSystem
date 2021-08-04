@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeageManagementSystem.Model
+namespace LeagueManagementSystem.Model
 {
     class League
     {

@@ -1,4 +1,4 @@
-﻿namespace LeageManagementSystem.UserControls
+﻿namespace LeagueManagementSystem.UserControls
 {
     partial class AddPlayerUserControl
     {

@@ -1,6 +1,6 @@
 ﻿using System.Data.SqlClient;
 
-namespace LeageManagementSystem.DAL
+namespace LeagueManagementSystem.DAL
 {
     /// <summary>
     /// Class to establish a connection directly to the DB (LeagueDatabase)

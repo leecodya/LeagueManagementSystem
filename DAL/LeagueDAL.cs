@@ -1,9 +1,9 @@
-﻿using LeageManagementSystem.Model;
+﻿using LeagueManagementSystem.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
-namespace LeageManagementSystem.DAL
+namespace LeagueManagementSystem.DAL
 {
     /// <summary>
     /// Class to interact with the DB directly for the League table

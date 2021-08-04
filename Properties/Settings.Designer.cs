@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LeageManagementSystem.Properties
+namespace LeagueManagementSystem.Properties
 {
 
 

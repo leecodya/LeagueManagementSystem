@@ -1,4 +1,4 @@
-﻿namespace LeageManagementSystem
+﻿namespace LeagueManagementSystem
 {
     partial class Form1
     {

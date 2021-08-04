@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LeageManagementSystem.UserControls
+namespace LeagueManagementSystem.UserControls
 {
     public partial class AddPlayerUserControl : UserControl
     {
