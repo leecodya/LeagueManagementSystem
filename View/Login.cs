@@ -11,6 +11,7 @@ namespace LeagueManagementSystem
         //private LeagueController leagueController;
         private LoginController loginController;
         private AdminDashboard adminDashboard;
+        private RegularDashboard regularDashboard;
 
         /// <summary>
         /// 0 parameter Login constructor
@@ -20,6 +21,7 @@ namespace LeagueManagementSystem
             InitializeComponent();
             loginController = new LoginController();
             adminDashboard = new AdminDashboard();
+            regularDashboard = new RegularDashboard();
             //leagueController = new LeagueController();
 
             // Move this code to any user control that needs combo box of leagues
@@ -60,12 +62,11 @@ namespace LeagueManagementSystem
             }
             else if (privileges.Equals("regular"))
             {
-                errorLabel.Text = "This user is a regular user";
-                /*adminDashboard.SetUser(newUser.Username);
+                /*adminDashboard.SetUser(newUser.Username);*/
                 Hide();
-                adminDashboard.ShowDialog();
+                regularDashboard.ShowDialog();
                 ClearForm();
-                Show();*/
+                Show();
             }
             else
             {

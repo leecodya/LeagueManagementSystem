@@ -82,6 +82,12 @@
     <Compile Include="UserControls\AddPlayerUserControl.Designer.cs">
       <DependentUpon>AddPlayerUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\RegularDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RegularDashboard.Designer.cs">
+      <DependentUpon>RegularDashboard.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -96,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegularDashboard.resx">
+      <DependentUpon>RegularDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
