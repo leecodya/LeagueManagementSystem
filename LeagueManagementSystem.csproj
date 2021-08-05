@@ -61,6 +61,12 @@
     <Compile Include="DAL\PlayerDAL.cs" />
     <Compile Include="Model\League.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="UserControls\AddRoundScoredUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddRoundScoredUserControl.Designer.cs">
+      <DependentUpon>AddRoundScoredUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\AddRoundScoredUserControl.resx">
+      <DependentUpon>AddRoundScoredUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>

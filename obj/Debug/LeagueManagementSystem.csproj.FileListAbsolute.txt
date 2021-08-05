@@ -1,7 +1,6 @@
 C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\bin\Debug\LeageManagementSystem.exe.config
 C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\bin\Debug\LeageManagementSystem.exe
 C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\bin\Debug\LeageManagementSystem.pdb
-C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeagueManagementSystem.csprojAssemblyReference.cache
 C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeageManagementSystem.Properties.Resources.resources
 C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeagueManagementSystem.csproj.GenerateResource.cache
 C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeagueManagementSystem.csproj.CoreCompileInputs.cache
@@ -16,3 +15,5 @@ C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\
 C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeageManagementSystem.View.AdminDashboard.resources
 C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeageManagementSystem.View.RegularDashboard.resources
 C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeageManagementSystem.View.GuestDashboard.resources
+C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeageManagementSystem.UserControls.AddRoundScoredUserControl.resources
+C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeagueManagementSystem.csprojAssemblyReference.cache
