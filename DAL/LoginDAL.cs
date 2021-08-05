@@ -4,6 +4,9 @@ using System.Data.SqlClient;
 
 namespace LeageManagementSystem.DAL
 {
+    /// <summary>
+    /// Class used to interact with the LMSUser table of the LeagueDatabase
+    /// </summary>
     class LoginDAL
     {
         /// <summary>

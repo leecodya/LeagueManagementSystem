@@ -9,6 +9,10 @@ namespace LeagueManagementSystem
     {
         //private LeagueController leagueController;
         private LoginController loginController;
+
+        /// <summary>
+        /// 0 parameter Login constructor
+        /// </summary>
         public Login()
         {
             InitializeComponent();
