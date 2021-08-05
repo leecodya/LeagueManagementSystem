@@ -12,6 +12,7 @@ namespace LeagueManagementSystem
         private LoginController loginController;
         private AdminDashboard adminDashboard;
         private RegularDashboard regularDashboard;
+        private GuestDashboard guestDashboard;
 
         /// <summary>
         /// 0 parameter Login constructor
@@ -22,6 +23,7 @@ namespace LeagueManagementSystem
             loginController = new LoginController();
             adminDashboard = new AdminDashboard();
             regularDashboard = new RegularDashboard();
+            guestDashboard = new GuestDashboard();
             //leagueController = new LeagueController();
 
             // Move this code to any user control that needs combo box of leagues
@@ -79,6 +81,14 @@ namespace LeagueManagementSystem
             usernameTextBox.Text = "";
             passwordTextBox.Text = "";
             errorLabel.Text = "";
+        }
+
+        private void GuestLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Hide();
+            guestDashboard.ShowDialog();
+            ClearForm();
+            Show();
         }
     }
 }

@@ -15,3 +15,4 @@ C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\bin\Debug\
 C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeagueManagementSystem.csproj.CopyComplete
 C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeageManagementSystem.View.AdminDashboard.resources
 C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeageManagementSystem.View.RegularDashboard.resources
+C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeageManagementSystem.View.GuestDashboard.resources

@@ -102,6 +102,7 @@
             this.guestLinkLabel.TabIndex = 6;
             this.guestLinkLabel.TabStop = true;
             this.guestLinkLabel.Text = "Continue as guest";
+            this.guestLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.GuestLinkLabel_LinkClicked);
             // 
             // errorLabel
             // 
