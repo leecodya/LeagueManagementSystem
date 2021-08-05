@@ -1,5 +1,6 @@
 ﻿using LeageManagementSystem.Controller;
 using LeageManagementSystem.Model;
+using LeageManagementSystem.View;
 using System;
 using System.Windows.Forms;
 
@@ -9,6 +10,7 @@ namespace LeagueManagementSystem
     {
         //private LeagueController leagueController;
         private LoginController loginController;
+        private AdminDashboard adminDashboard;
 
         /// <summary>
         /// 0 parameter Login constructor
@@ -17,6 +19,7 @@ namespace LeagueManagementSystem
         {
             InitializeComponent();
             loginController = new LoginController();
+            adminDashboard = new AdminDashboard();
             //leagueController = new LeagueController();
 
             // Move this code to any user control that needs combo box of leagues
@@ -48,13 +51,12 @@ namespace LeagueManagementSystem
             }
             else if (privileges.Equals("admin"))
             {
-                errorLabel.Text = "This user is an admin";
                 /*nurseDashboard.SetNurse(newUser.Username);
-                nurseDashboard.SetUser(newUser.Username);
+                nurseDashboard.SetUser(newUser.Username);*/
                 Hide();
-                nurseDashboard.ShowDialog();
+                adminDashboard.ShowDialog();
                 ClearForm();
-                Show();*/
+                Show();
             }
             else if (privileges.Equals("regular"))
             {
@@ -69,8 +71,13 @@ namespace LeagueManagementSystem
             {
                 errorLabel.Text = "Sorry, that user isn't registered.";
             }
+        }
+
+        private void ClearForm()
+        {
             usernameTextBox.Text = "";
             passwordTextBox.Text = "";
+            errorLabel.Text = "";
         }
     }
 }
