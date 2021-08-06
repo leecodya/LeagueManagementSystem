@@ -61,14 +61,17 @@
             // 
             // leagueComboBox
             // 
+            this.leagueComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.leagueComboBox.FormattingEnabled = true;
             this.leagueComboBox.Location = new System.Drawing.Point(271, 68);
             this.leagueComboBox.Name = "leagueComboBox";
             this.leagueComboBox.Size = new System.Drawing.Size(184, 24);
             this.leagueComboBox.TabIndex = 2;
+            this.leagueComboBox.SelectedIndexChanged += new System.EventHandler(this.LeagueComboBox_SelectedIndexChanged);
             // 
             // playerComboBox
             // 
+            this.playerComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.playerComboBox.FormattingEnabled = true;
             this.playerComboBox.Location = new System.Drawing.Point(271, 117);
             this.playerComboBox.Name = "playerComboBox";

@@ -8,7 +8,6 @@ namespace LeagueManagementSystem
 {
     public partial class Login : Form
     {
-        //private LeagueController leagueController;
         private LoginController loginController;
         private AdminDashboard adminDashboard;
         private RegularDashboard regularDashboard;
@@ -24,12 +23,6 @@ namespace LeagueManagementSystem
             adminDashboard = new AdminDashboard();
             regularDashboard = new RegularDashboard();
             guestDashboard = new GuestDashboard();
-            //leagueController = new LeagueController();
-
-            // Move this code to any user control that needs combo box of leagues
-            //this.leagueComboBox.DataSource = leagueController.GetLeagues();
-            //this.leagueComboBox.DisplayMember = "name";
-            // DropDownStyle = DropDownList
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
