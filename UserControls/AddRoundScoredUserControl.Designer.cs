@@ -66,7 +66,7 @@
             this.leagueComboBox.Location = new System.Drawing.Point(271, 68);
             this.leagueComboBox.Name = "leagueComboBox";
             this.leagueComboBox.Size = new System.Drawing.Size(184, 24);
-            this.leagueComboBox.TabIndex = 2;
+            this.leagueComboBox.TabIndex = 1;
             this.leagueComboBox.SelectedIndexChanged += new System.EventHandler(this.LeagueComboBox_SelectedIndexChanged);
             // 
             // playerComboBox
@@ -76,7 +76,7 @@
             this.playerComboBox.Location = new System.Drawing.Point(271, 117);
             this.playerComboBox.Name = "playerComboBox";
             this.playerComboBox.Size = new System.Drawing.Size(184, 24);
-            this.playerComboBox.TabIndex = 4;
+            this.playerComboBox.TabIndex = 2;
             // 
             // playerLabel
             // 
@@ -110,23 +110,26 @@
             this.dateOfRoundTextBox.Location = new System.Drawing.Point(271, 166);
             this.dateOfRoundTextBox.Name = "dateOfRoundTextBox";
             this.dateOfRoundTextBox.Size = new System.Drawing.Size(148, 22);
-            this.dateOfRoundTextBox.TabIndex = 8;
+            this.dateOfRoundTextBox.TabIndex = 3;
+            this.dateOfRoundTextBox.Enter += new System.EventHandler(this.DateOfRoundTextBox_Enter_1);
+            this.dateOfRoundTextBox.Leave += new System.EventHandler(this.DateOfRoundTextBox_Leave);
             // 
             // scoreTextBox
             // 
             this.scoreTextBox.Location = new System.Drawing.Point(271, 213);
             this.scoreTextBox.Name = "scoreTextBox";
             this.scoreTextBox.Size = new System.Drawing.Size(73, 22);
-            this.scoreTextBox.TabIndex = 9;
+            this.scoreTextBox.TabIndex = 4;
             // 
             // addRoundScoredButton
             // 
             this.addRoundScoredButton.Location = new System.Drawing.Point(271, 266);
             this.addRoundScoredButton.Name = "addRoundScoredButton";
             this.addRoundScoredButton.Size = new System.Drawing.Size(94, 28);
-            this.addRoundScoredButton.TabIndex = 10;
+            this.addRoundScoredButton.TabIndex = 5;
             this.addRoundScoredButton.Text = "Add";
             this.addRoundScoredButton.UseVisualStyleBackColor = true;
+            this.addRoundScoredButton.Click += new System.EventHandler(this.AddRoundScoredButton_Click);
             // 
             // AddRoundScoredUserControl
             // 
@@ -144,6 +147,7 @@
             this.Controls.Add(this.titleLabel);
             this.Name = "AddRoundScoredUserControl";
             this.Size = new System.Drawing.Size(628, 438);
+            this.Load += new System.EventHandler(this.AddRoundScoredUserControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
