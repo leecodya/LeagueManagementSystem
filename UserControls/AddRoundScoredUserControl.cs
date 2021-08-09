@@ -5,19 +5,28 @@ using LeagueManagementSystem.Controller;
 using LeageManagementSystem.Controller;
 using System.Globalization;
 using System.Drawing;
+using System.Data.SqlClient;
 
 namespace LeageManagementSystem.UserControls
 {
+    /// <summary>
+    /// User control to add a scored round
+    /// </summary>
     public partial class AddRoundScoredUserControl : UserControl
     {
         private LeagueController leagueController;
         private LeaguePlayersController leaguePlayersController;
+        private RoundController roundController;
 
+        /// <summary>
+        /// 0 parameter contructor
+        /// </summary>
         public AddRoundScoredUserControl()
         {
             InitializeComponent();
             leagueController = new LeagueController();
             leaguePlayersController = new LeaguePlayersController();
+            roundController = new RoundController();
 
             this.leagueComboBox.DataSource = leagueController.GetLeagues();
             this.leagueComboBox.DisplayMember = "name";
@@ -36,30 +45,41 @@ namespace LeageManagementSystem.UserControls
 
         private void AddRoundScoredButton_Click(object sender, EventArgs e)
         {
-            int selectedLeagueID = (int)this.leagueComboBox.SelectedValue;
-            int selectedPlayerID = (int)this.playerComboBox.SelectedValue;
-            string date = this.dateOfRoundTextBox.Text;
+            int selectedLeagueID = 0;
+            int selectedPlayerID = 0;
             string dateOfRound = "";
             int score = 0;
+            bool result = false;
             try
             {
-                DateTime dt = DateTime.ParseExact(date, "MM/dd/yyyy", CultureInfo.InvariantCulture);
-                dateOfRound = dt.ToString("yyyy-MM-dd");
-                score = Convert.ToInt32(this.scoreTextBox.Text);
+                selectedLeagueID = (int)this.leagueComboBox.SelectedValue;
+                selectedPlayerID = (int)this.playerComboBox.SelectedValue;
+                string date = this.dateOfRoundTextBox.Text;
+                
+                try
+                {
+                    DateTime dt = DateTime.ParseExact(date, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+                    dateOfRound = dt.ToString("yyyy-MM-dd");
+                    score = Convert.ToInt32(this.scoreTextBox.Text);
 
-                string concatStatement = selectedLeagueID.ToString() + "\n" +
-                                     selectedPlayerID.ToString() + "\n" +
-                                     dateOfRound.ToString() + "\n" +
-                                     score.ToString();
-                MessageBox.Show(concatStatement);
+                    result = roundController.AddRoundScore(selectedLeagueID, selectedPlayerID, dateOfRound, score);
+
+                    if (result)
+                    {
+                        MessageBox.Show("Round has been successfully added");
+                        ClearForm();
+                    }
+                }
+                catch (FormatException fe)
+                {
+                    MessageBox.Show("Please make sure that your round date is formatted as mm/dd/yyyy" +
+                        " and that the score entered is a number", fe.GetType().ToString());
+                }
             }
-            catch (FormatException fe)
+            catch (NullReferenceException nre)
             {
-                MessageBox.Show("Please make sure that your round date is formatted as mm/dd/yyyy" +
-                    " and that the score entered is a number");
-            }
-            
-            // roundController.AddRoundScore(selectedLeagueID, selectedPlayerID, dateOfRound, score);
+                MessageBox.Show("Please make sure all fields have a value", nre.GetType().ToString());
+            }            
         }
 
         private void AddRoundScoredUserControl_Load(object sender, EventArgs e)
@@ -80,8 +100,15 @@ namespace LeageManagementSystem.UserControls
             if (dateOfRoundTextBox.Text == "")
             {
                 dateOfRoundTextBox.Text = "mm/dd/yyyy";
-                dateOfRoundTextBox.ForeColor = Color.Gray;
             }
+        }
+
+        private void ClearForm()
+        {
+            leagueComboBox.SelectedIndex = -1;
+            playerComboBox.SelectedIndex = -1;
+            dateOfRoundTextBox.Text = "";
+            scoreTextBox.Text = "";
         }
     }
 }
