@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.adminTabControl = new System.Windows.Forms.TabControl();
             this.manageLeaguesTabPage = new System.Windows.Forms.TabPage();
             this.manageUsersTabPage = new System.Windows.Forms.TabPage();
             this.managePlayersTabPage = new System.Windows.Forms.TabPage();
             this.manageRoundsTabPage = new System.Windows.Forms.TabPage();
             this.titleLabel = new System.Windows.Forms.Label();
             this.welcomeLabel = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
+            this.adminTabControl.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // adminTabControl
             // 
-            this.tabControl1.Controls.Add(this.manageLeaguesTabPage);
-            this.tabControl1.Controls.Add(this.manageUsersTabPage);
-            this.tabControl1.Controls.Add(this.managePlayersTabPage);
-            this.tabControl1.Controls.Add(this.manageRoundsTabPage);
-            this.tabControl1.Location = new System.Drawing.Point(2, 82);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1022, 475);
-            this.tabControl1.TabIndex = 0;
+            this.adminTabControl.Controls.Add(this.manageLeaguesTabPage);
+            this.adminTabControl.Controls.Add(this.manageUsersTabPage);
+            this.adminTabControl.Controls.Add(this.managePlayersTabPage);
+            this.adminTabControl.Controls.Add(this.manageRoundsTabPage);
+            this.adminTabControl.Location = new System.Drawing.Point(2, 82);
+            this.adminTabControl.Name = "adminTabControl";
+            this.adminTabControl.SelectedIndex = 0;
+            this.adminTabControl.Size = new System.Drawing.Size(1022, 475);
+            this.adminTabControl.TabIndex = 0;
             // 
             // manageLeaguesTabPage
             // 
@@ -113,14 +113,14 @@
             this.ClientSize = new System.Drawing.Size(1022, 558);
             this.Controls.Add(this.welcomeLabel);
             this.Controls.Add(this.titleLabel);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.adminTabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AdminDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin Dashboard";
-            this.tabControl1.ResumeLayout(false);
+            this.adminTabControl.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,7 +128,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl adminTabControl;
         private System.Windows.Forms.TabPage manageLeaguesTabPage;
         private System.Windows.Forms.TabPage manageUsersTabPage;
         private System.Windows.Forms.TabPage managePlayersTabPage;

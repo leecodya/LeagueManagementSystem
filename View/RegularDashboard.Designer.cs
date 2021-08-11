@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.mainTabControl = new System.Windows.Forms.TabControl();
             this.registerPlayerTabPage = new System.Windows.Forms.TabPage();
             this.addRoundScoredTabPage = new System.Windows.Forms.TabPage();
             this.addPlayerToLeagueTabPage = new System.Windows.Forms.TabPage();
             this.myInformationTabPage = new System.Windows.Forms.TabPage();
             this.titleLabel = new System.Windows.Forms.Label();
             this.welcomeLabel = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
+            this.mainTabControl.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // mainTabControl
             // 
-            this.tabControl1.Controls.Add(this.registerPlayerTabPage);
-            this.tabControl1.Controls.Add(this.addRoundScoredTabPage);
-            this.tabControl1.Controls.Add(this.addPlayerToLeagueTabPage);
-            this.tabControl1.Controls.Add(this.myInformationTabPage);
-            this.tabControl1.Location = new System.Drawing.Point(2, 84);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1024, 475);
-            this.tabControl1.TabIndex = 0;
+            this.mainTabControl.Controls.Add(this.registerPlayerTabPage);
+            this.mainTabControl.Controls.Add(this.addRoundScoredTabPage);
+            this.mainTabControl.Controls.Add(this.addPlayerToLeagueTabPage);
+            this.mainTabControl.Controls.Add(this.myInformationTabPage);
+            this.mainTabControl.Location = new System.Drawing.Point(2, 84);
+            this.mainTabControl.Name = "mainTabControl";
+            this.mainTabControl.SelectedIndex = 0;
+            this.mainTabControl.Size = new System.Drawing.Size(1024, 475);
+            this.mainTabControl.TabIndex = 0;
             // 
             // registerPlayerTabPage
             // 
@@ -65,7 +65,7 @@
             this.addRoundScoredTabPage.Location = new System.Drawing.Point(4, 25);
             this.addRoundScoredTabPage.Name = "addRoundScoredTabPage";
             this.addRoundScoredTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.addRoundScoredTabPage.Size = new System.Drawing.Size(1016, 408);
+            this.addRoundScoredTabPage.Size = new System.Drawing.Size(1016, 446);
             this.addRoundScoredTabPage.TabIndex = 1;
             this.addRoundScoredTabPage.Text = "Add Round Scored";
             this.addRoundScoredTabPage.UseVisualStyleBackColor = true;
@@ -113,14 +113,14 @@
             this.ClientSize = new System.Drawing.Size(1022, 558);
             this.Controls.Add(this.welcomeLabel);
             this.Controls.Add(this.titleLabel);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.mainTabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RegularDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Dashboard";
-            this.tabControl1.ResumeLayout(false);
+            this.mainTabControl.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,7 +128,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl mainTabControl;
         private System.Windows.Forms.TabPage registerPlayerTabPage;
         private System.Windows.Forms.TabPage addRoundScoredTabPage;
         private System.Windows.Forms.TabPage addPlayerToLeagueTabPage;
