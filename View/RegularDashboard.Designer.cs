@@ -35,7 +35,9 @@
             this.myInformationTabPage = new System.Windows.Forms.TabPage();
             this.titleLabel = new System.Windows.Forms.Label();
             this.welcomeLabel = new System.Windows.Forms.Label();
+            this.registerPlayerUserControl1 = new LeageManagementSystem.UserControls.RegisterPlayerUserControl();
             this.mainTabControl.SuspendLayout();
+            this.registerPlayerTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainTabControl
@@ -52,6 +54,7 @@
             // 
             // registerPlayerTabPage
             // 
+            this.registerPlayerTabPage.Controls.Add(this.registerPlayerUserControl1);
             this.registerPlayerTabPage.Location = new System.Drawing.Point(4, 25);
             this.registerPlayerTabPage.Name = "registerPlayerTabPage";
             this.registerPlayerTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -74,7 +77,7 @@
             // 
             this.addPlayerToLeagueTabPage.Location = new System.Drawing.Point(4, 25);
             this.addPlayerToLeagueTabPage.Name = "addPlayerToLeagueTabPage";
-            this.addPlayerToLeagueTabPage.Size = new System.Drawing.Size(1016, 408);
+            this.addPlayerToLeagueTabPage.Size = new System.Drawing.Size(1016, 446);
             this.addPlayerToLeagueTabPage.TabIndex = 2;
             this.addPlayerToLeagueTabPage.Text = "Add Player to League";
             this.addPlayerToLeagueTabPage.UseVisualStyleBackColor = true;
@@ -83,7 +86,7 @@
             // 
             this.myInformationTabPage.Location = new System.Drawing.Point(4, 25);
             this.myInformationTabPage.Name = "myInformationTabPage";
-            this.myInformationTabPage.Size = new System.Drawing.Size(1016, 408);
+            this.myInformationTabPage.Size = new System.Drawing.Size(1016, 446);
             this.myInformationTabPage.TabIndex = 3;
             this.myInformationTabPage.Text = "My Information";
             this.myInformationTabPage.UseVisualStyleBackColor = true;
@@ -106,6 +109,13 @@
             this.welcomeLabel.Size = new System.Drawing.Size(0, 17);
             this.welcomeLabel.TabIndex = 2;
             // 
+            // registerPlayerUserControl1
+            // 
+            this.registerPlayerUserControl1.Location = new System.Drawing.Point(213, 32);
+            this.registerPlayerUserControl1.Name = "registerPlayerUserControl1";
+            this.registerPlayerUserControl1.Size = new System.Drawing.Size(559, 334);
+            this.registerPlayerUserControl1.TabIndex = 0;
+            // 
             // RegularDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -121,6 +131,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Dashboard";
             this.mainTabControl.ResumeLayout(false);
+            this.registerPlayerTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,5 +146,6 @@
         private System.Windows.Forms.TabPage myInformationTabPage;
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Label welcomeLabel;
+        private UserControls.RegisterPlayerUserControl registerPlayerUserControl1;
     }
 }
