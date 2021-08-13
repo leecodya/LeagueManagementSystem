@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace LeageManagementSystem.DAL
 {
@@ -36,7 +37,7 @@ namespace LeageManagementSystem.DAL
                     cmd.Parameters.Add("@PlayerID", System.Data.SqlDbType.Int);
                     cmd.Parameters["@PlayerID"].Value = selectedPlayerID;
 
-                    cmd.Parameters.Add("@DateOfRound", System.Data.SqlDbType.DateTime);
+                    cmd.Parameters.Add("@DateOfRound", System.Data.SqlDbType.VarChar);
                     cmd.Parameters["@DateOfRound"].Value = dateOfRound;
 
                     cmd.Parameters.Add("@Score", System.Data.SqlDbType.Int);
@@ -80,14 +81,56 @@ namespace LeageManagementSystem.DAL
                     {
                         while (reader.Read())
                         {
-                            string _date = "";
-                            _date = Convert.ToString(reader["dateOfRound"]);
+                            DateTime dateOfRound = Convert.ToDateTime(reader["dateOfRound"]);
+                            string _date = dateOfRound.ToString("yyyy-MM-dd");
                             _dates.Add(_date);
                         }
                     }
                 }
             }
             return _dates;
+        }
+
+        /// <summary>
+        /// Updates the score of a round
+        /// </summary>
+        /// <param name="leagueID">Selected league id</param>
+        /// <param name="playerID">Selected player id</param>
+        /// <param name="dateOfRound">Selected round date</param>
+        /// <param name="updatedScore">Updated round score</param>
+        /// <returns>Returns if the score was successfully updated or not</returns>
+        public bool UpdateRoundScore(int leagueID, int playerID, string dateOfRound, int updatedScore)
+        {
+            string updateStatement = "UPDATE Round " +
+                "SET score = @UpdatedScore " +
+                "WHERE leagueID = @LeagueID " +
+                "AND playerID = @PlayerID " +
+                "AND dateOfRound = @DateOfRound;";
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand cmd = new SqlCommand(updateStatement, connection))
+                {
+                    cmd.Parameters.Add("@LeagueID", System.Data.SqlDbType.Int);
+                    cmd.Parameters["@LeagueID"].Value = leagueID;
+
+                    cmd.Parameters.Add("@PlayerID", System.Data.SqlDbType.Int);
+                    cmd.Parameters["@PlayerID"].Value = playerID;
+
+                    cmd.Parameters.Add("@DateOfRound", System.Data.SqlDbType.VarChar);
+                    cmd.Parameters["@DateOfRound"].Value = dateOfRound;
+
+                    cmd.Parameters.Add("@UpdatedScore", System.Data.SqlDbType.Int);
+                    cmd.Parameters["@UpdatedScore"].Value = updatedScore;
+
+                    int count = cmd.ExecuteNonQuery();
+                    if (count > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
         }
     }
 }

@@ -1,23 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using LeageManagementSystem.Controller;
-using System.Globalization;
 
 namespace LeageManagementSystem.UserControls
 {
+    /// <summary>
+    /// User control to updated the round score
+    /// </summary>
     public partial class EditRoundUserControl : UserControl
     {
         private RoundController roundController;
         private LeagueController leagueController;
         private LeaguePlayersController leaguePlayersController;
 
+        /// <summary>
+        /// 0 parameter constructor
+        /// </summary>
         public EditRoundUserControl()
         {
             InitializeComponent();
@@ -35,7 +33,7 @@ namespace LeageManagementSystem.UserControls
         {
             int selectedLeagueID = 0;
             int selectedPlayerID = 0;
-            string date = "";
+            string dateOfRound = "";
             int score = 0;
             bool result = false;
 
@@ -43,21 +41,27 @@ namespace LeageManagementSystem.UserControls
             {
                 selectedLeagueID = (int)this.leagueComboBox.SelectedValue;
                 selectedPlayerID = (int)this.playerComboBox.SelectedValue;
-                date = this.datesOfRoundsComboBox.SelectedValue.ToString();
+                dateOfRound = this.datesOfRoundsComboBox.SelectedValue.ToString();
 
                 try
-                {
-                    DateTime dt = DateTime.ParseExact(date, "MM/dd/yyyy", CultureInfo.InvariantCulture);
-                    string dateOfRound = dt.ToString("yyyy-MM-dd");
-                    score = Convert.ToInt32(this.scoreTextBox.Text);
-
-                    //result = roundController.EditRoundScore(selectedLeagueID, selectedPlayerID, dateOfRound, score);
-
-                    /*if (result)
+                {               
+                    if (this.scoreTextBox.Text.Trim().Equals(""))
                     {
-                        MessageBox.Show("Round has been successfully updated");
-                        ClearForm();
-                    }*/
+                        MessageBox.Show("Please make sure to enter an updated score");
+                    }
+                    else
+                    {
+                        score = Convert.ToInt32(this.scoreTextBox.Text.Trim());
+
+                        result = roundController.UpdateRoundScore(selectedLeagueID, selectedPlayerID, dateOfRound, score);
+
+                        if (result)
+                        {
+                            MessageBox.Show("Round has been successfully updated");
+                            ClearForm();
+                        }
+                    }
+                    
                 }
                 catch (FormatException fe)
                 {
