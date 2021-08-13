@@ -16,5 +16,17 @@ namespace LeageManagementSystem.View
         {
             InitializeComponent();
         }
+
+        private void EditRoundButon_Click(object sender, EventArgs e)
+        {
+            addRoundScoredUserControl1.Visible = false;
+            editRoundUserControl1.Visible = true;
+        }
+
+        private void AddRoundButton_Click(object sender, EventArgs e)
+        {
+            addRoundScoredUserControl1.Visible = true;
+            editRoundUserControl1.Visible = false;
+        }
     }
 }

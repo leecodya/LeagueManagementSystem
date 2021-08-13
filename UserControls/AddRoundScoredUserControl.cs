@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
-using LeagueManagementSystem.Model;
-using LeagueManagementSystem.Controller;
 using LeageManagementSystem.Controller;
 using System.Globalization;
-using System.Drawing;
-using System.Data.SqlClient;
 
 namespace LeageManagementSystem.UserControls
 {

@@ -72,6 +72,12 @@
     <Compile Include="UserControls\AddRoundScoredUserControl.Designer.cs">
       <DependentUpon>AddRoundScoredUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\EditRoundUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\EditRoundUserControl.Designer.cs">
+      <DependentUpon>EditRoundUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\RegisterPlayerUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </Compile>
     <EmbeddedResource Include="UserControls\AddRoundScoredUserControl.resx">
       <DependentUpon>AddRoundScoredUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\EditRoundUserControl.resx">
+      <DependentUpon>EditRoundUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\RegisterPlayerUserControl.resx">
       <DependentUpon>RegisterPlayerUserControl.cs</DependentUpon>

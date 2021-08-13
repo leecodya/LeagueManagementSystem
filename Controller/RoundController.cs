@@ -1,4 +1,5 @@
 ﻿using LeageManagementSystem.DAL;
+using System.Collections.Generic;
 
 namespace LeageManagementSystem.Controller
 {
@@ -28,6 +29,17 @@ namespace LeageManagementSystem.Controller
         public bool AddRoundScore(int selectedLeagueID, int selectedPlayerID, string dateOfRound, int score)
         {
             return roundDAL.AddRound(selectedLeagueID, selectedPlayerID, dateOfRound, score);
+        }
+
+        /// <summary>
+        /// Returns list of dates based on league and player selected
+        /// </summary>
+        /// <param name="selectedLeagueID">Selected League ID</param>
+        /// <param name="selectedPlayerID">Selected Player ID</param>
+        /// <returns>Returns list of dates based on league and player selected</returns>
+        public List<string> GetDates(int selectedLeagueID, int selectedPlayerID)
+        {
+            return roundDAL.GetDates(selectedLeagueID, selectedPlayerID);
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using LeagueManagementSystem.DAL;
+using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 
 namespace LeageManagementSystem.DAL
@@ -47,6 +49,45 @@ namespace LeageManagementSystem.DAL
                         return false;
                 }
             }
+        }
+
+        /// <summary>
+        /// Returns list of dates based on league and player selected
+        /// </summary>
+        /// <param name="selectedLeagueID">Selected League ID</param>
+        /// <param name="selectedPlayerID">Selected Player ID</param>
+        /// <returns>Returns list of dates based on league and player selected</returns>
+        public List<string> GetDates(int selectedLeagueID, int selectedPlayerID)
+        {
+            List<string> _dates = new List<string>();
+            string selectStatement = "SELECT dateOfRound " +
+                                        "FROM Round " +
+                                        "WHERE leagueID = @LeagueID " +
+                                        "AND playerID = @PlayerID;";
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
+                {
+                    selectCommand.Parameters.Add("@LeagueID", System.Data.SqlDbType.Int);
+                    selectCommand.Parameters["@LeagueID"].Value = selectedLeagueID;
+
+                    selectCommand.Parameters.Add("@PlayerID", System.Data.SqlDbType.Int);
+                    selectCommand.Parameters["@PlayerID"].Value = selectedPlayerID;
+
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string _date = "";
+                            _date = Convert.ToString(reader["dateOfRound"]);
+                            _dates.Add(_date);
+                        }
+                    }
+                }
+            }
+            return _dates;
         }
     }
 }

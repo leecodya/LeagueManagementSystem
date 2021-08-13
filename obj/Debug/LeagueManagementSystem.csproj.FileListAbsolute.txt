@@ -18,3 +18,4 @@ C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\
 C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeageManagementSystem.UserControls.AddRoundScoredUserControl.resources
 C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeagueManagementSystem.csprojAssemblyReference.cache
 C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeageManagementSystem.UserControls.RegisterPlayerUserControl.resources
+C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeageManagementSystem.UserControls.EditRoundUserControl.resources
