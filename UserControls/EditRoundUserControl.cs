@@ -98,5 +98,10 @@ namespace LeageManagementSystem.UserControls
             int selectedPlayerID = (int)this.playerComboBox.SelectedValue;
             this.datesOfRoundsComboBox.DataSource = roundController.GetDates(selectedLeagueID, selectedPlayerID);
         }
+
+        private void ClearnButton_Click(object sender, EventArgs e)
+        {
+            ClearForm();
+        }
     }
 }
