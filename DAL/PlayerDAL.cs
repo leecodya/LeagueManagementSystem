@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LeagueManagementSystem.Model;
+using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 
 namespace LeagueManagementSystem.DAL
@@ -51,6 +53,36 @@ namespace LeagueManagementSystem.DAL
                         return false;
                 }
             }
+        }
+
+        /// <summary>
+        /// Retrieves all the players that are within the system, aka in the Player table
+        /// </summary>
+        /// <returns>Returns list of players within the Player table</returns>
+        public List<Player> GetSystemPlayers()
+        {
+            List<Player> _players = new List<Player>();
+            string selectStatement = "SELECT id, firstName, lastName FROM Player;";
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
+                {
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Player _player = new Player();
+                            _player.ID = (int)reader["id"];
+                            _player.FirstName = Convert.ToString(reader["firstName"]);
+                            _player.LastName = Convert.ToString(reader["lastName"]);
+                            _players.Add(_player);
+                        }
+                    }
+                }
+            }
+            return _players;
         }
     }
 }

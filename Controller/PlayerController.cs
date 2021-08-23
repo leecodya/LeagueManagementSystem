@@ -1,4 +1,6 @@
 ﻿using LeagueManagementSystem.DAL;
+using LeagueManagementSystem.Model;
+using System.Collections.Generic;
 
 namespace LeagueManagementSystem.Controller
 {
@@ -27,6 +29,15 @@ namespace LeagueManagementSystem.Controller
         public bool AddPlayerToSystem(string firstName, string lastName, string pdgaNum)
         {
             return playerDAL.AddPlayerToSystem(firstName, lastName, pdgaNum);
+        }
+
+        /// <summary>
+        /// Retrieves all the players that are within the system, aka in the Player table
+        /// </summary>
+        /// <returns>Returns list of players within the Player table</returns>
+        public List<Player> GetSystemPlayers()
+        {
+            return playerDAL.GetSystemPlayers();
         }
     }
 }

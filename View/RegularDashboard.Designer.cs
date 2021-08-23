@@ -40,9 +40,11 @@
             this.registerPlayerUserControl1 = new LeageManagementSystem.UserControls.RegisterPlayerUserControl();
             this.addRoundScoredUserControl1 = new LeageManagementSystem.UserControls.AddRoundScoredUserControl();
             this.editRoundUserControl1 = new LeageManagementSystem.UserControls.EditRoundUserControl();
+            this.addLeaguePlayerUserControl1 = new LeageManagementSystem.UserControls.AddLeaguePlayerUserControl();
             this.mainTabControl.SuspendLayout();
             this.registerPlayerTabPage.SuspendLayout();
             this.addRoundScoredTabPage.SuspendLayout();
+            this.addPlayerToLeagueTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainTabControl
@@ -51,19 +53,21 @@
             this.mainTabControl.Controls.Add(this.addRoundScoredTabPage);
             this.mainTabControl.Controls.Add(this.addPlayerToLeagueTabPage);
             this.mainTabControl.Controls.Add(this.myInformationTabPage);
-            this.mainTabControl.Location = new System.Drawing.Point(2, 84);
+            this.mainTabControl.Location = new System.Drawing.Point(2, 68);
+            this.mainTabControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mainTabControl.Name = "mainTabControl";
             this.mainTabControl.SelectedIndex = 0;
-            this.mainTabControl.Size = new System.Drawing.Size(1024, 475);
+            this.mainTabControl.Size = new System.Drawing.Size(768, 386);
             this.mainTabControl.TabIndex = 0;
             // 
             // registerPlayerTabPage
             // 
             this.registerPlayerTabPage.Controls.Add(this.registerPlayerUserControl1);
-            this.registerPlayerTabPage.Location = new System.Drawing.Point(4, 25);
+            this.registerPlayerTabPage.Location = new System.Drawing.Point(4, 22);
+            this.registerPlayerTabPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.registerPlayerTabPage.Name = "registerPlayerTabPage";
-            this.registerPlayerTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.registerPlayerTabPage.Size = new System.Drawing.Size(1016, 446);
+            this.registerPlayerTabPage.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.registerPlayerTabPage.Size = new System.Drawing.Size(760, 360);
             this.registerPlayerTabPage.TabIndex = 0;
             this.registerPlayerTabPage.Text = "Register Player";
             this.registerPlayerTabPage.UseVisualStyleBackColor = true;
@@ -74,19 +78,21 @@
             this.addRoundScoredTabPage.Controls.Add(this.editRoundUserControl1);
             this.addRoundScoredTabPage.Controls.Add(this.editRoundButon);
             this.addRoundScoredTabPage.Controls.Add(this.addRoundButton);
-            this.addRoundScoredTabPage.Location = new System.Drawing.Point(4, 25);
+            this.addRoundScoredTabPage.Location = new System.Drawing.Point(4, 22);
+            this.addRoundScoredTabPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addRoundScoredTabPage.Name = "addRoundScoredTabPage";
-            this.addRoundScoredTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.addRoundScoredTabPage.Size = new System.Drawing.Size(1016, 446);
+            this.addRoundScoredTabPage.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addRoundScoredTabPage.Size = new System.Drawing.Size(760, 360);
             this.addRoundScoredTabPage.TabIndex = 1;
             this.addRoundScoredTabPage.Text = "Add Round Scored";
             this.addRoundScoredTabPage.UseVisualStyleBackColor = true;
             // 
             // editRoundButon
             // 
-            this.editRoundButon.Location = new System.Drawing.Point(29, 121);
+            this.editRoundButon.Location = new System.Drawing.Point(22, 98);
+            this.editRoundButon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.editRoundButon.Name = "editRoundButon";
-            this.editRoundButon.Size = new System.Drawing.Size(111, 40);
+            this.editRoundButon.Size = new System.Drawing.Size(83, 32);
             this.editRoundButon.TabIndex = 2;
             this.editRoundButon.Text = "Edit Round";
             this.editRoundButon.UseVisualStyleBackColor = true;
@@ -94,9 +100,10 @@
             // 
             // addRoundButton
             // 
-            this.addRoundButton.Location = new System.Drawing.Point(29, 44);
+            this.addRoundButton.Location = new System.Drawing.Point(22, 36);
+            this.addRoundButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addRoundButton.Name = "addRoundButton";
-            this.addRoundButton.Size = new System.Drawing.Size(111, 38);
+            this.addRoundButton.Size = new System.Drawing.Size(83, 31);
             this.addRoundButton.TabIndex = 1;
             this.addRoundButton.Text = "Add Round";
             this.addRoundButton.UseVisualStyleBackColor = true;
@@ -104,18 +111,21 @@
             // 
             // addPlayerToLeagueTabPage
             // 
-            this.addPlayerToLeagueTabPage.Location = new System.Drawing.Point(4, 25);
+            this.addPlayerToLeagueTabPage.Controls.Add(this.addLeaguePlayerUserControl1);
+            this.addPlayerToLeagueTabPage.Location = new System.Drawing.Point(4, 22);
+            this.addPlayerToLeagueTabPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addPlayerToLeagueTabPage.Name = "addPlayerToLeagueTabPage";
-            this.addPlayerToLeagueTabPage.Size = new System.Drawing.Size(1016, 446);
+            this.addPlayerToLeagueTabPage.Size = new System.Drawing.Size(760, 360);
             this.addPlayerToLeagueTabPage.TabIndex = 2;
             this.addPlayerToLeagueTabPage.Text = "Add Player to League";
             this.addPlayerToLeagueTabPage.UseVisualStyleBackColor = true;
             // 
             // myInformationTabPage
             // 
-            this.myInformationTabPage.Location = new System.Drawing.Point(4, 25);
+            this.myInformationTabPage.Location = new System.Drawing.Point(4, 22);
+            this.myInformationTabPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.myInformationTabPage.Name = "myInformationTabPage";
-            this.myInformationTabPage.Size = new System.Drawing.Size(1016, 446);
+            this.myInformationTabPage.Size = new System.Drawing.Size(760, 360);
             this.myInformationTabPage.TabIndex = 3;
             this.myInformationTabPage.Text = "My Information";
             this.myInformationTabPage.UseVisualStyleBackColor = true;
@@ -124,50 +134,63 @@
             // 
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(759, 32);
+            this.titleLabel.Location = new System.Drawing.Point(569, 26);
+            this.titleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(189, 29);
+            this.titleLabel.Size = new System.Drawing.Size(148, 24);
             this.titleLabel.TabIndex = 1;
             this.titleLabel.Text = "Main Dashboard";
             // 
             // welcomeLabel
             // 
             this.welcomeLabel.AutoSize = true;
-            this.welcomeLabel.Location = new System.Drawing.Point(68, 42);
+            this.welcomeLabel.Location = new System.Drawing.Point(51, 34);
+            this.welcomeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.welcomeLabel.Name = "welcomeLabel";
-            this.welcomeLabel.Size = new System.Drawing.Size(0, 17);
+            this.welcomeLabel.Size = new System.Drawing.Size(0, 13);
             this.welcomeLabel.TabIndex = 2;
             // 
             // registerPlayerUserControl1
             // 
-            this.registerPlayerUserControl1.Location = new System.Drawing.Point(213, 32);
+            this.registerPlayerUserControl1.Location = new System.Drawing.Point(160, 26);
+            this.registerPlayerUserControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.registerPlayerUserControl1.Name = "registerPlayerUserControl1";
-            this.registerPlayerUserControl1.Size = new System.Drawing.Size(559, 334);
+            this.registerPlayerUserControl1.Size = new System.Drawing.Size(419, 271);
             this.registerPlayerUserControl1.TabIndex = 0;
             // 
             // addRoundScoredUserControl1
             // 
-            this.addRoundScoredUserControl1.Location = new System.Drawing.Point(204, 26);
+            this.addRoundScoredUserControl1.Location = new System.Drawing.Point(153, 21);
+            this.addRoundScoredUserControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addRoundScoredUserControl1.Name = "addRoundScoredUserControl1";
-            this.addRoundScoredUserControl1.Size = new System.Drawing.Size(628, 398);
+            this.addRoundScoredUserControl1.Size = new System.Drawing.Size(471, 323);
             this.addRoundScoredUserControl1.TabIndex = 4;
             // 
             // editRoundUserControl1
             // 
-            this.editRoundUserControl1.Location = new System.Drawing.Point(249, 16);
+            this.editRoundUserControl1.Location = new System.Drawing.Point(187, 13);
+            this.editRoundUserControl1.Margin = new System.Windows.Forms.Padding(2);
             this.editRoundUserControl1.Name = "editRoundUserControl1";
-            this.editRoundUserControl1.Size = new System.Drawing.Size(551, 395);
+            this.editRoundUserControl1.Size = new System.Drawing.Size(413, 321);
             this.editRoundUserControl1.TabIndex = 3;
+            // 
+            // addLeaguePlayerUserControl1
+            // 
+            this.addLeaguePlayerUserControl1.Location = new System.Drawing.Point(185, 3);
+            this.addLeaguePlayerUserControl1.Name = "addLeaguePlayerUserControl1";
+            this.addLeaguePlayerUserControl1.Size = new System.Drawing.Size(377, 331);
+            this.addLeaguePlayerUserControl1.TabIndex = 0;
             // 
             // RegularDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1022, 558);
+            this.ClientSize = new System.Drawing.Size(766, 453);
             this.Controls.Add(this.welcomeLabel);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.mainTabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RegularDashboard";
@@ -176,6 +199,7 @@
             this.mainTabControl.ResumeLayout(false);
             this.registerPlayerTabPage.ResumeLayout(false);
             this.addRoundScoredTabPage.ResumeLayout(false);
+            this.addPlayerToLeagueTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,5 +219,6 @@
         private System.Windows.Forms.Button addRoundButton;
         private UserControls.EditRoundUserControl editRoundUserControl1;
         private UserControls.AddRoundScoredUserControl addRoundScoredUserControl1;
+        private UserControls.AddLeaguePlayerUserControl addLeaguePlayerUserControl1;
     }
 }
