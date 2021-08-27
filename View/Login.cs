@@ -48,8 +48,7 @@ namespace LeagueManagementSystem
             }
             else if (privileges.Equals("admin"))
             {
-                /*nurseDashboard.SetNurse(newUser.Username);
-                nurseDashboard.SetUser(newUser.Username);*/
+                /*adminDashboard.SetUser(newUser.Username);*/
                 Hide();
                 adminDashboard.ShowDialog();
                 ClearForm();
@@ -57,7 +56,7 @@ namespace LeagueManagementSystem
             }
             else if (privileges.Equals("regular"))
             {
-                /*adminDashboard.SetUser(newUser.Username);*/
+                regularDashboard.SetUser(newUser);
                 Hide();
                 regularDashboard.ShowDialog();
                 ClearForm();

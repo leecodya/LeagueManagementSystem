@@ -1,5 +1,6 @@
 ﻿using LeageManagementSystem.Model;
 using LeagueManagementSystem.DAL;
+using System;
 using System.Data.SqlClient;
 
 namespace LeageManagementSystem.DAL
@@ -19,7 +20,7 @@ namespace LeageManagementSystem.DAL
         public User GetLoginInformation(string user, string password)
         {
             User newUser = new User();
-            string selectStatement = "SELECT userName, privileges FROM LMSUser where userName = @user and password = @password;";
+            string selectStatement = "SELECT userName, privileges, playerID FROM LMSUser where userName = @user and password = @password;";
 
             using (SqlConnection connection = DBConnection.GetConnection())
             {
@@ -39,6 +40,15 @@ namespace LeageManagementSystem.DAL
                         {
                             newUser.UserName = reader["userName"].ToString();
                             newUser.Privileges = reader["privileges"].ToString().Trim();
+                            if (reader["playerID"].GetType() == typeof(DBNull))
+                            {
+                                newUser.PlayerID = 0;
+                            }
+                            else
+                            {
+                                newUser.PlayerID = Convert.ToInt32(reader["playerID"]);
+                            }
+                            
                         }
                     }
                 }

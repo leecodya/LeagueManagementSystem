@@ -84,5 +84,45 @@ namespace LeagueManagementSystem.DAL
             }
             return _players;
         }
+
+        /// <summary>
+        /// Retrieves player from DB with the player ID passed in
+        /// </summary>
+        /// <param name="playerID">Player ID passed in order to retrieve the proper player from the DB</param>
+        /// <returns>Returns player with given playerID</returns>
+        public Player GetPlayerByID(int playerID)
+        {
+            Player _player = new Player();
+            string selectStatement = "SELECT id, firstName, lastName, pdgaNum FROM Player WHERE id = @PlayerID;";
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
+                {
+                    selectCommand.Parameters.Add("@PlayerID", System.Data.SqlDbType.Int);
+                    selectCommand.Parameters["@PlayerID"].Value = playerID;
+
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {                            
+                            _player.ID = (int)reader["id"];
+                            _player.FirstName = Convert.ToString(reader["firstName"]);
+                            _player.LastName = Convert.ToString(reader["lastName"]);
+                            if (reader["pdgaNum"].GetType() == typeof(DBNull))
+                            {
+                                _player.PDGANumber = DBNull.Value.ToString();
+                            }
+                            else
+                            {
+                                _player.PDGANumber = Convert.ToString(reader["pdgaNum"]);
+                            }
+                        }
+                    }
+                }
+            }
+            return _player;
+        }
     }
 }

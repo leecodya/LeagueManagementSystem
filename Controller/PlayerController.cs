@@ -39,5 +39,15 @@ namespace LeagueManagementSystem.Controller
         {
             return playerDAL.GetSystemPlayers();
         }
+
+        /// <summary>
+        /// Retrieves player from DB with the player ID passed in
+        /// </summary>
+        /// <param name="playerID">Player ID passed in order to retrieve the proper player from the DB</param>
+        /// <returns>Returns player with given playerID</returns>
+        public Player GetPlayerByID(int playerID)
+        {
+            return playerDAL.GetPlayerByID(playerID);
+        }
     }
 }
