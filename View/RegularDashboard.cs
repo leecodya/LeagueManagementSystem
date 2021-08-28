@@ -24,7 +24,7 @@ namespace LeageManagementSystem.View
             welcomeLabel.Text = "Welcome " + user.UserName + "!";
             
             Player _player = playerController.GetPlayerByID(newUser.PlayerID);
-            myInformationUserControl1.SetTextValues(_player.FirstName, _player.LastName, _player.PDGANumber);
+            myInformationUserControl1.SetValues(_player.FirstName, _player.LastName, _player.PDGANumber, newUser.PlayerID);
         }
 
         private void EditRoundButon_Click(object sender, EventArgs e)

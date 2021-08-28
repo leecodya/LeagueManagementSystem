@@ -29,12 +29,12 @@ namespace LeagueManagementSystem
         {
             string privileges = "";
             User newUser = new User();
-            string user = usernameTextBox.Text;
+            string username = usernameTextBox.Text;
             string password = passwordTextBox.Text;
 
             try
             {
-                newUser = loginController.GetLoginInformation(user, password);
+                newUser = loginController.GetLoginInformation(username, password);
                 privileges = newUser.Privileges;
             }
             catch (Exception ex)

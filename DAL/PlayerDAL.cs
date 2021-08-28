@@ -124,5 +124,63 @@ namespace LeagueManagementSystem.DAL
             }
             return _player;
         }
+
+        /// <summary>
+        /// Updates old player information with new player information
+        /// </summary>
+        /// <param name="oldPlayer">Player information already in the system</param>
+        /// <param name="newPlayer">New player information to be saved over the old player information</param>
+        /// <returns>Returns if the query successfully ran</returns>
+        public bool UpdatePlayerInformation(Player oldPlayer, Player newPlayer)
+        {
+            string updateStatement = "UPDATE Player " +
+                "SET firstName = @NewFirstName," +
+                "lastName = @NewLastName," +
+                "pdgaNum = @NewPDGANumber " +
+                "WHERE id = @OldPlayerID " +
+                "AND firstName = @OldFirstName " +
+                "AND lastName = @OldLastName " +
+                "AND (pdgaNum = @OldPDGANumber " +
+                    "OR pdgaNum IS NULL and @OldPDGANumber IS NULL)";
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand cmd = new SqlCommand(updateStatement, connection))
+                {
+                    cmd.Parameters.AddWithValue("@NewFirstName", newPlayer.FirstName);
+                    cmd.Parameters.AddWithValue("@NewLastName", newPlayer.LastName);
+                    
+                    if (newPlayer.PDGANumber == "")
+                    {
+                        cmd.Parameters.AddWithValue("@NewPDGANumber", DBNull.Value);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@NewPDGANumber", newPlayer.PDGANumber);
+                    }                    
+
+                    cmd.Parameters.AddWithValue("@OldPlayerID", oldPlayer.ID);
+
+                    cmd.Parameters.AddWithValue("@OldFirstName", oldPlayer.FirstName);
+                    cmd.Parameters.AddWithValue("@OldLastName", oldPlayer.LastName);
+
+                    if (oldPlayer.PDGANumber == "")
+                    {
+                        cmd.Parameters.AddWithValue("@OldPDGANumber", DBNull.Value);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@OldPDGANumber", oldPlayer.PDGANumber);
+                    }
+
+                    int count = cmd.ExecuteNonQuery();
+                    if (count > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+        }
     }
 }

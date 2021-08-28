@@ -47,6 +47,7 @@
             this.updatePlayerButton.TabIndex = 22;
             this.updatePlayerButton.Text = "Update";
             this.updatePlayerButton.UseVisualStyleBackColor = true;
+            this.updatePlayerButton.Click += new System.EventHandler(this.UpdatePlayerButton_Click);
             // 
             // lastNameLabel
             // 

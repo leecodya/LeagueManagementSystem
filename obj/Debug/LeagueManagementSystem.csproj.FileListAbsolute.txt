@@ -20,3 +20,4 @@ C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\
 C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeageManagementSystem.UserControls.EditRoundUserControl.resources
 C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeageManagementSystem.UserControls.AddLeaguePlayerUserControl.resources
 C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeageManagementSystem.UserControls.MyInformationUserControl.resources
+C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeagueManagementSystem.csprojAssemblyReference.cache

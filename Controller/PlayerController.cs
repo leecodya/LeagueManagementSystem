@@ -49,5 +49,16 @@ namespace LeagueManagementSystem.Controller
         {
             return playerDAL.GetPlayerByID(playerID);
         }
+
+        /// <summary>
+        /// Updates old player information with new player information
+        /// </summary>
+        /// <param name="oldPlayer">Player information already in the system</param>
+        /// <param name="newPlayer">New player information to be saved over the old player information</param>
+        /// <returns>Returns if the query successfully ran</returns>
+        public bool UpdatePlayerInformation(Player oldPlayer, Player newPlayer)
+        {
+            return playerDAL.UpdatePlayerInformation(oldPlayer, newPlayer);
+        }
     }
 }
