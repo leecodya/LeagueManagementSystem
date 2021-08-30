@@ -25,9 +25,10 @@ namespace LeageManagementSystem.View
         public void SetUser(User newUser)
         {
             user = newUser;
-            welcomeLabel.Text = "Welcome " + user.UserName + "!";
 
             Player _player = playerController.GetPlayerByID(newUser.PlayerID);
+
+            welcomeLabel.Text = "Welcome " + _player.FullName + "!";
         }
 
         private void AddPlayersToLeagueButton_Click(object sender, EventArgs e)

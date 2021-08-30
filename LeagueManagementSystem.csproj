@@ -117,12 +117,6 @@
     <Compile Include="Model\Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControls\AddPlayerUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\AddPlayerUserControl.Designer.cs">
-      <DependentUpon>AddPlayerUserControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\RegularDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
