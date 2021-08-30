@@ -48,7 +48,7 @@ namespace LeagueManagementSystem
             }
             else if (privileges.Equals("admin"))
             {
-                /*adminDashboard.SetUser(newUser.Username);*/
+                adminDashboard.SetUser(newUser);
                 Hide();
                 adminDashboard.ShowDialog();
                 ClearForm();
