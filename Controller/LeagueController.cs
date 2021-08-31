@@ -27,5 +27,15 @@ namespace LeageManagementSystem.Controller
         {
             return leagueDAL.GetLeagues();
         }
+
+        /// <summary>
+        /// Adds new league to the database
+        /// </summary>
+        /// <param name="newLeague">New league object to be added to the database</param>
+        /// <returns>Returns if insertion was successful or not</returns>
+        public bool AddLeague(League newLeague)
+        {
+            return leagueDAL.AddLeague(newLeague);
+        }
     }
 }

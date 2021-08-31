@@ -50,5 +50,60 @@ namespace LeagueManagementSystem.DAL
             }
             return _leagues;
         }
+
+        /// <summary>
+        /// Adds new league to the database
+        /// </summary>
+        /// <param name="newLeague">New league object to be added to the database</param>
+        /// <returns>Returns if insertion was successful or not</returns>
+        public bool AddLeague(League newLeague)
+        {
+            string insertStatement =
+               "INSERT INTO League " +
+               "(name, startDate, endDate, courseName) " +
+               "VALUES (@Name, @StartDate, @EndDate, @CourseName);";
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand cmd = new SqlCommand(insertStatement, connection))
+                {
+                    cmd.Parameters.AddWithValue("@Name", newLeague.Name);
+
+                    if (String.IsNullOrEmpty(newLeague.StartDate.ToString()))
+                    {
+                        cmd.Parameters.AddWithValue("@StartDate", DBNull.Value);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@StartDate", newLeague.StartDate);
+                    }
+
+                    if (String.IsNullOrEmpty(newLeague.EndDate.ToString()))
+                    {
+                        cmd.Parameters.AddWithValue("@EndDate", DBNull.Value);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@EndDate", newLeague.EndDate);
+                    }
+
+                    if (String.IsNullOrEmpty(newLeague.CourseName.ToString()))
+                    {
+                        cmd.Parameters.AddWithValue("@CourseName", DBNull.Value);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@CourseName", newLeague.CourseName);
+                    }
+
+                    int count = cmd.ExecuteNonQuery();
+                    if (count > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+        }
     }
 }

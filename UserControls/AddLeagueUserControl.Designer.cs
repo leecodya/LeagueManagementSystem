@@ -49,6 +49,7 @@
             this.createLeagueButton.TabIndex = 15;
             this.createLeagueButton.Text = "Create";
             this.createLeagueButton.UseVisualStyleBackColor = true;
+            this.createLeagueButton.Click += new System.EventHandler(this.CreateLeagueButton_Click);
             // 
             // endDateTextBox
             // 
@@ -61,12 +62,12 @@
             // endDateLabel
             // 
             this.endDateLabel.AutoSize = true;
-            this.endDateLabel.Location = new System.Drawing.Point(53, 121);
+            this.endDateLabel.Location = new System.Drawing.Point(57, 121);
             this.endDateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.endDateLabel.Name = "endDateLabel";
-            this.endDateLabel.Size = new System.Drawing.Size(59, 13);
+            this.endDateLabel.Size = new System.Drawing.Size(55, 13);
             this.endDateLabel.TabIndex = 13;
-            this.endDateLabel.Text = "*End Date:";
+            this.endDateLabel.Text = "End Date:";
             // 
             // startDateTextBox
             // 
@@ -79,12 +80,12 @@
             // startDateLabel
             // 
             this.startDateLabel.AutoSize = true;
-            this.startDateLabel.Location = new System.Drawing.Point(50, 82);
+            this.startDateLabel.Location = new System.Drawing.Point(54, 82);
             this.startDateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.startDateLabel.Name = "startDateLabel";
-            this.startDateLabel.Size = new System.Drawing.Size(62, 13);
+            this.startDateLabel.Size = new System.Drawing.Size(58, 13);
             this.startDateLabel.TabIndex = 11;
-            this.startDateLabel.Text = "*Start Date:";
+            this.startDateLabel.Text = "Start Date:";
             // 
             // leagueNameTextBox
             // 
@@ -126,12 +127,12 @@
             // courseNameLabel
             // 
             this.courseNameLabel.AutoSize = true;
-            this.courseNameLabel.Location = new System.Drawing.Point(34, 159);
+            this.courseNameLabel.Location = new System.Drawing.Point(38, 159);
             this.courseNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.courseNameLabel.Name = "courseNameLabel";
-            this.courseNameLabel.Size = new System.Drawing.Size(78, 13);
+            this.courseNameLabel.Size = new System.Drawing.Size(74, 13);
             this.courseNameLabel.TabIndex = 16;
-            this.courseNameLabel.Text = "*Course Name:";
+            this.courseNameLabel.Text = "Course Name:";
             // 
             // AddLeagueUserControl
             // 
