@@ -18,6 +18,7 @@ namespace LeageManagementSystem.View
 
             addLeagueUserControl1.Visible = true;
             addLeaguePlayerUserControl1.Visible = false;
+            editLeagueUserControl1.Visible = false;
 
             addRoundScoredUserControl1.Visible = true;
             editRoundUserControl1.Visible = false;
@@ -35,18 +36,21 @@ namespace LeageManagementSystem.View
         private void AddPlayersToLeagueButton_Click(object sender, EventArgs e)
         {
             addLeaguePlayerUserControl1.Visible = true;
+            editLeagueUserControl1.Visible = false;
             addLeagueUserControl1.Visible = false;
         }
 
         private void AddLeagueButton_Click(object sender, EventArgs e)
         {
             addLeaguePlayerUserControl1.Visible = false;
+            editLeagueUserControl1.Visible = false;
             addLeagueUserControl1.Visible = true;
         }
 
         private void EditLeagueButton_Click(object sender, EventArgs e)
         {
             addLeaguePlayerUserControl1.Visible = false;
+            editLeagueUserControl1.Visible = true;
             addLeagueUserControl1.Visible = false;
         }
 

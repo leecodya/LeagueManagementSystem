@@ -46,7 +46,7 @@
             this.createLeagueButton.Margin = new System.Windows.Forms.Padding(2);
             this.createLeagueButton.Name = "createLeagueButton";
             this.createLeagueButton.Size = new System.Drawing.Size(75, 26);
-            this.createLeagueButton.TabIndex = 15;
+            this.createLeagueButton.TabIndex = 5;
             this.createLeagueButton.Text = "Create";
             this.createLeagueButton.UseVisualStyleBackColor = true;
             this.createLeagueButton.Click += new System.EventHandler(this.CreateLeagueButton_Click);
@@ -57,7 +57,7 @@
             this.endDateTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.endDateTextBox.Name = "endDateTextBox";
             this.endDateTextBox.Size = new System.Drawing.Size(109, 20);
-            this.endDateTextBox.TabIndex = 14;
+            this.endDateTextBox.TabIndex = 3;
             // 
             // endDateLabel
             // 
@@ -75,7 +75,7 @@
             this.startDateTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.startDateTextBox.Name = "startDateTextBox";
             this.startDateTextBox.Size = new System.Drawing.Size(109, 20);
-            this.startDateTextBox.TabIndex = 12;
+            this.startDateTextBox.TabIndex = 2;
             // 
             // startDateLabel
             // 
@@ -93,7 +93,7 @@
             this.leagueNameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.leagueNameTextBox.Name = "leagueNameTextBox";
             this.leagueNameTextBox.Size = new System.Drawing.Size(140, 20);
-            this.leagueNameTextBox.TabIndex = 10;
+            this.leagueNameTextBox.TabIndex = 1;
             // 
             // leagueNameLabel
             // 
@@ -122,7 +122,7 @@
             this.courseNameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.courseNameTextBox.Name = "courseNameTextBox";
             this.courseNameTextBox.Size = new System.Drawing.Size(140, 20);
-            this.courseNameTextBox.TabIndex = 17;
+            this.courseNameTextBox.TabIndex = 4;
             // 
             // courseNameLabel
             // 
