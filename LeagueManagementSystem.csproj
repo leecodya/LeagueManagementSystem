@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{2C460B99-F459-4A39-BB46-0CC3E5BFD705}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>LeageManagementSystem</RootNamespace>
-    <AssemblyName>LeageManagementSystem</AssemblyName>
+    <RootNamespace>LeagueManagementSystem</RootNamespace>
+    <AssemblyName>LeagueManagementSystem</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -143,6 +143,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UserControls\AddLeaguePlayerUserControl.resx">
       <DependentUpon>AddLeaguePlayerUserControl.cs</DependentUpon>
