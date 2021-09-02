@@ -53,6 +53,9 @@ namespace LeageManagementSystem.UserControls
             }
         }
 
+        /// <summary>
+        /// Method used to reset the league combo box by retrieves a fresh list of leagues and set the textboxes to an empty string
+        /// </summary>
         public void ResetFields()
         {
             this.leagueNameComboBox.DataSource = leagueController.GetLeagues();

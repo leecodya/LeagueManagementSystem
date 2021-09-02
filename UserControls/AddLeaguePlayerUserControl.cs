@@ -58,6 +58,9 @@ namespace LeageManagementSystem.UserControls
             }
         }
 
+        /// <summary>
+        /// Resets the comboboxes by retrieving a fresh list of leagues and players and set them back to -1 index
+        /// </summary>
         public void ResetForm()
         {
             this.leagueComboBox.DataSource = leagueController.GetLeagues();
