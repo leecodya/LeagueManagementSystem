@@ -35,6 +35,7 @@ namespace LeageManagementSystem.View
 
         private void AddPlayersToLeagueButton_Click(object sender, EventArgs e)
         {
+            addLeaguePlayerUserControl1.ResetForm();
             addLeaguePlayerUserControl1.Visible = true;
             editLeagueUserControl1.Visible = false;
             addLeagueUserControl1.Visible = false;
@@ -49,6 +50,7 @@ namespace LeageManagementSystem.View
 
         private void EditLeagueButton_Click(object sender, EventArgs e)
         {
+            editLeagueUserControl1.ResetFields();
             addLeaguePlayerUserControl1.Visible = false;
             editLeagueUserControl1.Visible = true;
             addLeagueUserControl1.Visible = false;

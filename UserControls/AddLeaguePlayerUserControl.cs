@@ -21,15 +21,7 @@ namespace LeageManagementSystem.UserControls
             playerController = new PlayerController();
             leaguePlayersController = new LeaguePlayersController();
 
-            this.leagueComboBox.DataSource = leagueController.GetLeagues();
-            this.leagueComboBox.DisplayMember = "name";
-            this.leagueComboBox.ValueMember = "id";
-            this.leagueComboBox.SelectedIndex = -1;
-
-            this.playerComboBox.DataSource = playerController.GetSystemPlayers();
-            this.playerComboBox.DisplayMember = "FullName";
-            this.playerComboBox.ValueMember = "id";
-            this.playerComboBox.SelectedIndex = -1;
+            ResetForm();
         }
 
         private void AddPlayerButton_Click(object sender, EventArgs e)
@@ -50,7 +42,7 @@ namespace LeageManagementSystem.UserControls
                     if (result)
                     {
                         MessageBox.Show("Player has been successfully added to the league");
-                        ClearForm();
+                        ResetForm();
                     }
 
                 }
@@ -66,10 +58,17 @@ namespace LeageManagementSystem.UserControls
             }
         }
 
-        private void ClearForm()
+        public void ResetForm()
         {
-            leagueComboBox.SelectedIndex = -1;
-            playerComboBox.SelectedIndex = -1;
+            this.leagueComboBox.DataSource = leagueController.GetLeagues();
+            this.leagueComboBox.DisplayMember = "name";
+            this.leagueComboBox.ValueMember = "id";
+            this.leagueComboBox.SelectedIndex = -1;
+
+            this.playerComboBox.DataSource = playerController.GetSystemPlayers();
+            this.playerComboBox.DisplayMember = "FullName";
+            this.playerComboBox.ValueMember = "id";
+            this.playerComboBox.SelectedIndex = -1;
         }
     }
 }

@@ -105,5 +105,64 @@ namespace LeagueManagementSystem.DAL
                 }
             }
         }
+
+        /// <summary>
+        /// Returns league object from DB with the given leagueID
+        /// </summary>
+        /// <param name="leagueID">ID of league to retrieve info about</param>
+        /// <returns>Returns league object from DB</returns>
+        public League GetLeagueByID(int leagueID)
+        {
+            League myLeague = new League();
+            string selectStatement = "SELECT name, startDate, endDate, courseName " +
+                                        "FROM League " +
+                                        "WHERE id = @ID;";
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
+                {
+                    selectCommand.Parameters.AddWithValue("@ID", leagueID);
+
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            myLeague.Name = reader["name"].ToString();
+                            
+                            if (reader["startDate"].GetType() == typeof(DBNull))
+                            {
+                                myLeague.StartDate = null;
+                            }
+                            else
+                            {
+                                myLeague.StartDate = Convert.ToDateTime(reader["startDate"]);
+                            }
+
+                            if (reader["endDate"].GetType() == typeof(DBNull))
+                            {
+                                myLeague.EndDate = null;
+                            }
+                            else
+                            {
+                                myLeague.EndDate = Convert.ToDateTime(reader["endDate"]);
+                            }
+
+                            if (reader["courseName"].GetType() == typeof(DBNull))
+                            {
+                                myLeague.CourseName = "";
+                            }
+                            else
+                            {
+                                myLeague.CourseName = reader["courseName"].ToString();
+                            }
+                        }
+                    }
+                }
+            }
+            return myLeague;
+        }
     }
 }

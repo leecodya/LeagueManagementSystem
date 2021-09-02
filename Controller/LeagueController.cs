@@ -37,5 +37,15 @@ namespace LeageManagementSystem.Controller
         {
             return leagueDAL.AddLeague(newLeague);
         }
+
+        /// <summary>
+        /// Returns league object from leagueDAL with the given leagueID
+        /// </summary>
+        /// <param name="leagueID">ID of league to retrieve info about</param>
+        /// <returns>Returns league object from leagueDAL</returns>
+        public League GetLeagueByID(int leagueID)
+        {
+            return leagueDAL.GetLeagueByID(leagueID);
+        }
     }
 }
