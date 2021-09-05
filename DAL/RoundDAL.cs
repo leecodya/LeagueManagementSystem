@@ -118,7 +118,7 @@ namespace LeageManagementSystem.DAL
                     cmd.Parameters.Add("@PlayerID", System.Data.SqlDbType.Int);
                     cmd.Parameters["@PlayerID"].Value = playerID;
 
-                    cmd.Parameters.Add("@DateOfRound", System.Data.SqlDbType.VarChar);
+                    cmd.Parameters.Add("@DateOfRound", System.Data.SqlDbType.Date);
                     cmd.Parameters["@DateOfRound"].Value = dateOfRound;
 
                     cmd.Parameters.Add("@UpdatedScore", System.Data.SqlDbType.Int);

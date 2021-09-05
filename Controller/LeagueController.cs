@@ -47,5 +47,10 @@ namespace LeageManagementSystem.Controller
         {
             return leagueDAL.GetLeagueByID(leagueID);
         }
+
+        public bool UpdateLeague(League oldLeague, League newLeague)
+        {
+            return leagueDAL.UpdateLeague(oldLeague, newLeague);
+        }
     }
 }

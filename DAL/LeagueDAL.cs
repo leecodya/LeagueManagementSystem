@@ -114,7 +114,7 @@ namespace LeagueManagementSystem.DAL
         public League GetLeagueByID(int leagueID)
         {
             League myLeague = new League();
-            string selectStatement = "SELECT name, startDate, endDate, courseName " +
+            string selectStatement = "SELECT id, name, startDate, endDate, courseName " +
                                         "FROM League " +
                                         "WHERE id = @ID;";
 
@@ -130,6 +130,7 @@ namespace LeagueManagementSystem.DAL
                     {
                         while (reader.Read())
                         {
+                            myLeague.ID = Convert.ToInt32(reader["id"]);
                             myLeague.Name = reader["name"].ToString();
                             
                             if (reader["startDate"].GetType() == typeof(DBNull))
@@ -163,6 +164,99 @@ namespace LeagueManagementSystem.DAL
                 }
             }
             return myLeague;
+        }
+
+        public bool UpdateLeague(League oldLeague, League newLeague)
+        {
+            string updateStatement = "UPDATE League " +
+                "SET startDate = @NewStartDate," +
+                "endDate = @NewEndDate, " +
+                "courseName = @NewCourseName " +
+                "WHERE id = @OldLeagueID " +
+                "AND (startDate = @OldStartDate " +
+                    "OR startDate IS NULL and @OldStartDate IS NULL) " +
+                "AND (endDate = @OldEndDate " +
+                    "OR endDate IS NULL and @OldEndDate IS NULL) " +
+                "AND (courseName = @OldCourseName " +
+                    "OR courseName IS NULL and @OldCourseName IS NULL)";
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand cmd = new SqlCommand(updateStatement, connection))
+                {
+                    if (newLeague.StartDate == null)
+                    {
+                        cmd.Parameters.AddWithValue("@NewStartDate", DBNull.Value);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@NewStartDate", newLeague.StartDate);
+                    }
+
+                    if (newLeague.EndDate == null)
+                    {
+                        cmd.Parameters.AddWithValue("@NewEndDate", DBNull.Value);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@NewEndDate", newLeague.EndDate);
+                    }
+
+                    if (newLeague.CourseName == "")
+                    {
+                        cmd.Parameters.AddWithValue("@NewCourseName", DBNull.Value);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@NewCourseName", newLeague.CourseName);
+                    }
+
+                    cmd.Parameters.AddWithValue("@OldLeagueID", oldLeague.ID);
+
+                    if (oldLeague.StartDate == null)
+                    {
+                        cmd.Parameters.AddWithValue("@OldStartDate", DBNull.Value);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@OldStartDate", oldLeague.StartDate);
+                    }
+
+                    if (oldLeague.EndDate == null)
+                    {
+                        cmd.Parameters.AddWithValue("@OldEndDate", DBNull.Value);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@OldEndDate", oldLeague.EndDate);
+                    }
+
+                    if (oldLeague.CourseName == "")
+                    {
+                        cmd.Parameters.AddWithValue("@OldCourseName", DBNull.Value);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@OldCourseName", oldLeague.CourseName);
+                    }
+
+                    /*if (oldPlayer.PDGANumber == "")
+                    {
+                        cmd.Parameters.AddWithValue("@OldPDGANumber", DBNull.Value);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@OldPDGANumber", oldPlayer.PDGANumber);
+                    }*/
+
+                    int count = cmd.ExecuteNonQuery();
+                    if (count > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
         }
     }
 }

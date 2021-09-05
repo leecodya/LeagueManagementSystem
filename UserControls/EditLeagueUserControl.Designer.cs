@@ -69,6 +69,7 @@
             this.updateButton.TabIndex = 6;
             this.updateButton.Text = "Update";
             this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // endDateTextBox
             // 
