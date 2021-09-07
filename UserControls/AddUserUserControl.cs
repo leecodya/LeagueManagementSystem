@@ -44,7 +44,7 @@ namespace LeagueManagementSystem.UserControls
             
         }
 
-        private void CreateLeagueButton_Click(object sender, EventArgs e)
+        private void CreateUserButton_Click(object sender, EventArgs e)
         {
             try
             {

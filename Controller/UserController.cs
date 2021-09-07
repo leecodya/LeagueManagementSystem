@@ -37,5 +37,16 @@ namespace LeagueManagementSystem.Controller
         {
             return userDAL.GetUserByUsername(username);
         }
+
+        /// <summary>
+        /// Updates only the password and privileges for the user
+        /// </summary>
+        /// <param name="oldUser">User info to be updated</param>
+        /// <param name="newUser">New user info to replace the old user info</param>
+        /// <returns>Returns if query was successful</returns>
+        public bool UpdateUser(User oldUser, User newUser)
+        {
+            return userDAL.UpdateUser(oldUser, newUser);
+        }
     }
 }

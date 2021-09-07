@@ -104,6 +104,12 @@
     <Compile Include="UserControls\EditRoundUserControl.Designer.cs">
       <DependentUpon>EditRoundUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\EditUserUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\EditUserUserControl.Designer.cs">
+      <DependentUpon>EditUserUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\MyInformationUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\EditRoundUserControl.resx">
       <DependentUpon>EditRoundUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\EditUserUserControl.resx">
+      <DependentUpon>EditUserUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\MyInformationUserControl.resx">
       <DependentUpon>MyInformationUserControl.cs</DependentUpon>

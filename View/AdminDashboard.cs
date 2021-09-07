@@ -22,6 +22,9 @@ namespace LeageManagementSystem.View
 
             addRoundScoredUserControl1.Visible = true;
             editRoundUserControl1.Visible = false;
+
+            addUserUserControl1.Visible = true;
+            editUserUserControl1.Visible = false;
         }
 
         public void SetUser(User newUser)
@@ -83,11 +86,14 @@ namespace LeageManagementSystem.View
         {
             addUserUserControl1.ResetFields();
             addUserUserControl1.Visible = true;
+            editUserUserControl1.Visible = false;
         }
 
         private void EditUserButton_Click(object sender, EventArgs e)
         {
+            editUserUserControl1.ResetFields();
             addUserUserControl1.Visible = false;
+            editUserUserControl1.Visible = true;
         }
     }
 }

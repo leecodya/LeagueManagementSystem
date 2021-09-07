@@ -37,6 +37,8 @@
             this.addLeaguePlayerUserControl1 = new LeageManagementSystem.UserControls.AddLeaguePlayerUserControl();
             this.addPlayersToLeagueButton = new System.Windows.Forms.Button();
             this.manageUsersTabPage = new System.Windows.Forms.TabPage();
+            this.editUserButton = new System.Windows.Forms.Button();
+            this.addUserButton = new System.Windows.Forms.Button();
             this.addUserUserControl1 = new LeagueManagementSystem.UserControls.AddUserUserControl();
             this.managePlayersTabPage = new System.Windows.Forms.TabPage();
             this.registerPlayerUserControl1 = new LeageManagementSystem.UserControls.RegisterPlayerUserControl();
@@ -49,8 +51,7 @@
             this.addRoundButton = new System.Windows.Forms.Button();
             this.titleLabel = new System.Windows.Forms.Label();
             this.welcomeLabel = new System.Windows.Forms.Label();
-            this.addUserButton = new System.Windows.Forms.Button();
-            this.editUserButton = new System.Windows.Forms.Button();
+            this.editUserUserControl1 = new LeagueManagementSystem.UserControls.EditUserUserControl();
             this.adminTabControl.SuspendLayout();
             this.manageLeaguesTabPage.SuspendLayout();
             this.manageUsersTabPage.SuspendLayout();
@@ -141,6 +142,7 @@
             // 
             // manageUsersTabPage
             // 
+            this.manageUsersTabPage.Controls.Add(this.editUserUserControl1);
             this.manageUsersTabPage.Controls.Add(this.editUserButton);
             this.manageUsersTabPage.Controls.Add(this.addUserButton);
             this.manageUsersTabPage.Controls.Add(this.addUserUserControl1);
@@ -152,6 +154,26 @@
             this.manageUsersTabPage.TabIndex = 1;
             this.manageUsersTabPage.Text = "Manage Users";
             this.manageUsersTabPage.UseVisualStyleBackColor = true;
+            // 
+            // editUserButton
+            // 
+            this.editUserButton.Location = new System.Drawing.Point(20, 94);
+            this.editUserButton.Name = "editUserButton";
+            this.editUserButton.Size = new System.Drawing.Size(75, 23);
+            this.editUserButton.TabIndex = 2;
+            this.editUserButton.Text = "Edit User";
+            this.editUserButton.UseVisualStyleBackColor = true;
+            this.editUserButton.Click += new System.EventHandler(this.EditUserButton_Click);
+            // 
+            // addUserButton
+            // 
+            this.addUserButton.Location = new System.Drawing.Point(20, 46);
+            this.addUserButton.Name = "addUserButton";
+            this.addUserButton.Size = new System.Drawing.Size(75, 23);
+            this.addUserButton.TabIndex = 1;
+            this.addUserButton.Text = "Add User";
+            this.addUserButton.UseVisualStyleBackColor = true;
+            this.addUserButton.Click += new System.EventHandler(this.AddUserButton_Click);
             // 
             // addUserUserControl1
             // 
@@ -271,25 +293,12 @@
             this.welcomeLabel.Size = new System.Drawing.Size(0, 13);
             this.welcomeLabel.TabIndex = 2;
             // 
-            // addUserButton
+            // editUserUserControl1
             // 
-            this.addUserButton.Location = new System.Drawing.Point(20, 46);
-            this.addUserButton.Name = "addUserButton";
-            this.addUserButton.Size = new System.Drawing.Size(75, 23);
-            this.addUserButton.TabIndex = 1;
-            this.addUserButton.Text = "Add User";
-            this.addUserButton.UseVisualStyleBackColor = true;
-            this.addUserButton.Click += new System.EventHandler(this.AddUserButton_Click);
-            // 
-            // editUserButton
-            // 
-            this.editUserButton.Location = new System.Drawing.Point(20, 94);
-            this.editUserButton.Name = "editUserButton";
-            this.editUserButton.Size = new System.Drawing.Size(75, 23);
-            this.editUserButton.TabIndex = 2;
-            this.editUserButton.Text = "Edit User";
-            this.editUserButton.UseVisualStyleBackColor = true;
-            this.editUserButton.Click += new System.EventHandler(this.EditUserButton_Click);
+            this.editUserUserControl1.Location = new System.Drawing.Point(200, 5);
+            this.editUserUserControl1.Name = "editUserUserControl1";
+            this.editUserUserControl1.Size = new System.Drawing.Size(326, 311);
+            this.editUserUserControl1.TabIndex = 3;
             // 
             // AdminDashboard
             // 
@@ -341,5 +350,6 @@
         private LeagueManagementSystem.UserControls.AddUserUserControl addUserUserControl1;
         private System.Windows.Forms.Button editUserButton;
         private System.Windows.Forms.Button addUserButton;
+        private LeagueManagementSystem.UserControls.EditUserUserControl editUserUserControl1;
     }
 }

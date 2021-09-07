@@ -75,5 +75,46 @@ namespace LeagueManagementSystem.DAL
             }
             return _user;
         }
+
+        /// <summary>
+        /// Updates only the password and privileges for the user
+        /// </summary>
+        /// <param name="oldUser">User info to be updated</param>
+        /// <param name="newUser">New user info to replace the old user info</param>
+        /// <returns>Returns if query was successful</returns>
+        public bool UpdateUser(User oldUser, User newUser)
+        {
+            string updateStatement = "UPDATE LMSUser " +
+                "SET password = @NewPassword, " +
+                "privileges = @NewPrivileges " +
+                "WHERE id = @OldUserID " +
+                "AND username = @OldUserName " +
+                "AND password = @OldPassword " +
+                "AND privileges = @OldPrivileges " +
+                "AND playerID = @OldPlayerID ";
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand cmd = new SqlCommand(updateStatement, connection))
+                {
+                    cmd.Parameters.AddWithValue("@NewPassword", newUser.Password);
+                    cmd.Parameters.AddWithValue("@NewPrivileges", newUser.Privileges);
+
+                    cmd.Parameters.AddWithValue("@OldUserID", oldUser.ID);
+
+                    cmd.Parameters.AddWithValue("@OldUserName", oldUser.UserName);
+                    cmd.Parameters.AddWithValue("@OldPassword", oldUser.Password);
+                    cmd.Parameters.AddWithValue("@OldPrivileges", oldUser.Privileges);
+                    cmd.Parameters.AddWithValue("@OldPlayerID", oldUser.PlayerID);
+
+                    int count = cmd.ExecuteNonQuery();
+                    if (count > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+        }
     }
 }
