@@ -84,6 +84,12 @@
     <Compile Include="UserControls\AddRoundScoredUserControl.Designer.cs">
       <DependentUpon>AddRoundScoredUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\AddUserUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddUserUserControl.Designer.cs">
+      <DependentUpon>AddUserUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\EditLeagueUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\AddRoundScoredUserControl.resx">
       <DependentUpon>AddRoundScoredUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AddUserUserControl.resx">
+      <DependentUpon>AddUserUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\EditLeagueUserControl.resx">
       <DependentUpon>EditLeagueUserControl.cs</DependentUpon>

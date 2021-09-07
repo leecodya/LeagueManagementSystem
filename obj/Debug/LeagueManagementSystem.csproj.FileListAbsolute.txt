@@ -23,3 +23,4 @@ C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\bin\Debug\
 C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeagueManagementSystem.Properties.Resources.resources
 C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeagueManagementSystem.exe
 C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeagueManagementSystem.pdb
+C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeagueManagementSystem.UserControls.AddUserUserControl.resources
