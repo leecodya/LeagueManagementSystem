@@ -62,7 +62,9 @@ namespace LeagueManagementSystem.DAL
         public List<Player> GetSystemPlayers()
         {
             List<Player> _players = new List<Player>();
-            string selectStatement = "SELECT id, firstName, lastName FROM Player;";
+            string selectStatement = "SELECT id, firstName, lastName, pdgaNum " +
+                                        "FROM Player " +
+                                        "ORDER BY firstName;";
 
             using (SqlConnection connection = DBConnection.GetConnection())
             {
@@ -77,6 +79,7 @@ namespace LeagueManagementSystem.DAL
                             _player.ID = (int)reader["id"];
                             _player.FirstName = Convert.ToString(reader["firstName"]);
                             _player.LastName = Convert.ToString(reader["lastName"]);
+                            _player.PDGANumber = Convert.ToString(reader["pdgaNum"]);
                             _players.Add(_player);
                         }
                     }

@@ -23,5 +23,13 @@ namespace LeagueManagementSystem.Model
         }
 
         public string PDGANumber { get; set; }
+
+        public string FullNameAndPDGANumber
+        {
+            get
+            {
+                return FirstName + " " + LastName + " (" + PDGANumber + ")";
+            }
+        }
     }
 }

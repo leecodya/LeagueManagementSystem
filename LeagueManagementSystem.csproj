@@ -57,12 +57,14 @@
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\PlayerController.cs" />
     <Compile Include="Controller\RoundController.cs" />
+    <Compile Include="Controller\UserController.cs" />
     <Compile Include="DAL\DBConnection.cs" />
     <Compile Include="DAL\LeagueDAL.cs" />
     <Compile Include="DAL\LeaguePlayersDAL.cs" />
     <Compile Include="DAL\LoginDAL.cs" />
     <Compile Include="DAL\PlayerDAL.cs" />
     <Compile Include="DAL\RoundDAL.cs" />
+    <Compile Include="DAL\UserDAL.cs" />
     <Compile Include="Model\League.cs" />
     <Compile Include="Model\LeaguePlayer.cs" />
     <Compile Include="Model\User.cs" />
