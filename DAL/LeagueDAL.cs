@@ -166,6 +166,12 @@ namespace LeagueManagementSystem.DAL
             return myLeague;
         }
 
+        /// <summary>
+        /// Updates old league information with new league information
+        /// </summary>
+        /// <param name="oldLeague">League information already in the system</param>
+        /// <param name="newLeague">New league information to be saved over the old league information</param>
+        /// <returns>Returns if the query is successful</returns>
         public bool UpdateLeague(League oldLeague, League newLeague)
         {
             string updateStatement = "UPDATE League " +
