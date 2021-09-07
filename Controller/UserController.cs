@@ -27,5 +27,15 @@ namespace LeagueManagementSystem.Controller
         {
             return userDAL.AddUser(newUser);
         }
+
+        /// <summary>
+        /// Retrieves user object based on username given
+        /// </summary>
+        /// <param name="username">Username of user</param>
+        /// <returns>Returns user retrieved from the database</returns>
+        public User GetUserByUsername(string username)
+        {
+            return userDAL.GetUserByUsername(username);
+        }
     }
 }
