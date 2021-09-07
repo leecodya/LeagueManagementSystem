@@ -58,5 +58,15 @@ namespace LeageManagementSystem.Controller
         {
             return leagueDAL.UpdateLeague(oldLeague, newLeague);
         }
+
+        /// <summary>
+        /// Deletes league from the database
+        /// </summary>
+        /// <param name="leagueID">ID of league to be removed</param>
+        /// <returns>Returns if the deletion was successful</returns>
+        public bool DeleteLeague(int leagueID)
+        {
+            return leagueDAL.DeleteLeague(leagueID);
+        }
     }
 }

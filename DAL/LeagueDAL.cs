@@ -247,16 +247,33 @@ namespace LeagueManagementSystem.DAL
                         cmd.Parameters.AddWithValue("@OldCourseName", oldLeague.CourseName);
                     }
 
-                    /*if (oldPlayer.PDGANumber == "")
-                    {
-                        cmd.Parameters.AddWithValue("@OldPDGANumber", DBNull.Value);
-                    }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@OldPDGANumber", oldPlayer.PDGANumber);
-                    }*/
-
                     int count = cmd.ExecuteNonQuery();
+                    if (count > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Deletes league from the database
+        /// </summary>
+        /// <param name="leagueID">ID of league to be removed</param>
+        /// <returns>Returns if the deletion was successful</returns>
+        public bool DeleteLeague(int leagueID)
+        {
+            string deleteStatement = "DELETE FROM League " +
+                                        "WHERE id = @LeagueID;";
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand deleteCommand = new SqlCommand(deleteStatement, connection))
+                {
+                    deleteCommand.Parameters.AddWithValue("@LeagueID", leagueID);
+
+                    int count = deleteCommand.ExecuteNonQuery();
                     if (count > 0)
                         return true;
                     else

@@ -126,5 +126,33 @@ namespace LeageManagementSystem.UserControls
                 MessageBox.Show("Please make sure you have a proper date format", fe.GetType().ToString());
             }
         }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this league?", "Delete Confirmation", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                try
+                {
+                    int selectedLeagueID = (int)leagueNameComboBox.SelectedValue;
+                    bool result = leagueController.DeleteLeague(selectedLeagueID);
+
+                    if (result)
+                    {
+                        MessageBox.Show("League was deleted");
+                        ResetFields();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong with deleting the league.");
+                    }
+                }
+                catch (NullReferenceException nre)
+                {
+                    MessageBox.Show("Please select a league", nre.GetType().ToString());
+                }
+            }
+        }
     }
 }
