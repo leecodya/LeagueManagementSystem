@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LeagueManagementSystem.Controller;
+using LeagueManagementSystem.Model;
+using LeageManagementSystem.Model;
 
 namespace LeagueManagementSystem.UserControls
 {
@@ -25,6 +27,70 @@ namespace LeagueManagementSystem.UserControls
             playerComboBox.DisplayMember = "FullNameAndPDGANumber";
             playerComboBox.ValueMember = "id";
             playerComboBox.SelectedIndex = -1;
+        }
+
+        private void GetPlayerIDButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int selectedPlayerID = (int)playerComboBox.SelectedValue;
+                Player myPlayer = playerController.GetPlayerByID(selectedPlayerID);
+                playerIDTextBox.Text = Convert.ToString(myPlayer.ID);
+            }
+            catch (NullReferenceException nre)
+            {
+                MessageBox.Show("Please select a player", nre.GetType().ToString());
+            }
+            
+        }
+
+        private void CreateLeagueButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (usernameTextBox.Text.Trim() == "" || passwordTextBox.Text.Trim() == "" || playerIDTextBox.Text == "")
+                {
+                    MessageBox.Show("Please make sure all required fields are properly filled out");
+                }
+                else
+                {
+                    User newUser = new User();
+                    string username = usernameTextBox.Text;
+                    string password = passwordTextBox.Text;
+                    string privileges = privilegesComboBox.SelectedItem.ToString();
+                    int playerID = Convert.ToInt32(playerIDTextBox.Text);
+
+                    newUser.UserName = username;
+                    newUser.Password = password;
+                    newUser.Privileges = privileges;
+                    newUser.PlayerID = playerID;
+
+                    bool result = userController.AddUser(newUser);
+
+                    if (result)
+                    {
+                        MessageBox.Show("User was successfully added");
+                        ResetFields();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong when added the user");
+                    }
+                }
+            }
+            catch (NullReferenceException nre)
+            {
+                MessageBox.Show("Please select a privilege for this user", nre.GetType().ToString());
+            }
+        }
+
+        public void ResetFields()
+        {
+            usernameTextBox.Text = "";
+            passwordTextBox.Text = "";
+            privilegesComboBox.SelectedIndex = -1;
+            playerComboBox.SelectedIndex = -1;
+            playerIDTextBox.Text = "";
         }
     }
 }

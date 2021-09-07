@@ -28,7 +28,7 @@ namespace LeagueManagementSystem.Model
         {
             get
             {
-                return FirstName + " " + LastName + " (" + PDGANumber + ")";
+                return FullName + " (" + PDGANumber + ")";
             }
         }
     }

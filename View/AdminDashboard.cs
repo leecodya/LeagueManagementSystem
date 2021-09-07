@@ -79,5 +79,15 @@ namespace LeageManagementSystem.View
             editRoundUserControl1.Visible = true;
         }
 
+        private void AddUserButton_Click(object sender, EventArgs e)
+        {
+            addUserUserControl1.ResetFields();
+            addUserUserControl1.Visible = true;
+        }
+
+        private void EditUserButton_Click(object sender, EventArgs e)
+        {
+            addUserUserControl1.Visible = false;
+        }
     }
 }

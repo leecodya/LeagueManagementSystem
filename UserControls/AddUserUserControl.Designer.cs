@@ -47,18 +47,19 @@
             this.playerIDTextBox.Location = new System.Drawing.Point(118, 219);
             this.playerIDTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.playerIDTextBox.Name = "playerIDTextBox";
+            this.playerIDTextBox.ReadOnly = true;
             this.playerIDTextBox.Size = new System.Drawing.Size(140, 20);
             this.playerIDTextBox.TabIndex = 6;
             // 
             // playerIDLabel
             // 
             this.playerIDLabel.AutoSize = true;
-            this.playerIDLabel.Location = new System.Drawing.Point(53, 222);
+            this.playerIDLabel.Location = new System.Drawing.Point(49, 222);
             this.playerIDLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.playerIDLabel.Name = "playerIDLabel";
-            this.playerIDLabel.Size = new System.Drawing.Size(53, 13);
+            this.playerIDLabel.Size = new System.Drawing.Size(57, 13);
             this.playerIDLabel.TabIndex = 26;
-            this.playerIDLabel.Text = "Player ID:";
+            this.playerIDLabel.Text = "*Player ID:";
             // 
             // createLeagueButton
             // 
@@ -69,6 +70,7 @@
             this.createLeagueButton.TabIndex = 7;
             this.createLeagueButton.Text = "Create";
             this.createLeagueButton.UseVisualStyleBackColor = true;
+            this.createLeagueButton.Click += new System.EventHandler(this.CreateLeagueButton_Click);
             // 
             // privilegesLabel
             // 
@@ -85,6 +87,7 @@
             this.passwordTextBox.Location = new System.Drawing.Point(118, 81);
             this.passwordTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(140, 20);
             this.passwordTextBox.TabIndex = 2;
             // 
@@ -132,8 +135,8 @@
             this.privilegesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.privilegesComboBox.FormattingEnabled = true;
             this.privilegesComboBox.Items.AddRange(new object[] {
-            "Admin",
-            "Regular"});
+            "admin",
+            "regular"});
             this.privilegesComboBox.Location = new System.Drawing.Point(118, 120);
             this.privilegesComboBox.Name = "privilegesComboBox";
             this.privilegesComboBox.Size = new System.Drawing.Size(140, 21);
@@ -156,6 +159,7 @@
             this.getPlayerIDButton.TabIndex = 5;
             this.getPlayerIDButton.Text = "Get Player ID";
             this.getPlayerIDButton.UseVisualStyleBackColor = true;
+            this.getPlayerIDButton.Click += new System.EventHandler(this.GetPlayerIDButton_Click);
             // 
             // AddUserUserControl
             // 
