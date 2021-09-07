@@ -75,7 +75,10 @@ namespace LeageManagementSystem.UserControls
             }            
         }
 
-        private void ClearForm()
+        /// <summary>
+        /// Resets all the fields to a blank state
+        /// </summary>
+        public void ClearForm()
         {
             leagueNameTextBox.Text = "";
             startDateTextBox.Text = "";

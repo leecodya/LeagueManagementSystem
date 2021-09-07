@@ -43,6 +43,7 @@ namespace LeageManagementSystem.View
 
         private void AddLeagueButton_Click(object sender, EventArgs e)
         {
+            addLeagueUserControl1.ClearForm();
             addLeaguePlayerUserControl1.Visible = false;
             editLeagueUserControl1.Visible = false;
             addLeagueUserControl1.Visible = true;
