@@ -85,5 +85,41 @@ namespace LeagueManagementSystem.UserControls
                 MessageBox.Show("Please make sure all of the fields have a valid entry", fe.GetType().ToString());
             }
         }
+
+        private void DeleteUserButton_Click(object sender, EventArgs e)
+        {
+            if (currentUser.ID == 0)
+            {
+                MessageBox.Show("Please enter a proper username and search for the user first before deleting");
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this user?", "Delete Confirmation", MessageBoxButtons.YesNo);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    try
+                    {
+                        int userID = currentUser.ID;
+                        bool result = userController.DeleteUser(userID);
+
+                        if (result)
+                        {
+                            MessageBox.Show("User was deleted");
+                            ResetFields();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Something went wrong with deleting the user.");
+                        }
+                    }
+                    catch (NullReferenceException nre)
+                    {
+                        MessageBox.Show("Please enter a proper username", nre.GetType().ToString());
+                    }
+                }
+            }
+            
+        }
     }
 }

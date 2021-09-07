@@ -48,5 +48,15 @@ namespace LeagueManagementSystem.Controller
         {
             return userDAL.UpdateUser(oldUser, newUser);
         }
+
+        /// <summary>
+        /// Deletes user from the database
+        /// </summary>
+        /// <param name="userID">ID of user to be removed</param>
+        /// <returns>Returns if the deletion was successful</returns>
+        public bool DeleteUser(int userID)
+        {
+            return userDAL.DeleteUser(userID);
+        }
     }
 }

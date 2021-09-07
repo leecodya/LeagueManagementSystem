@@ -116,5 +116,31 @@ namespace LeagueManagementSystem.DAL
                 }
             }
         }
+
+        /// <summary>
+        /// Deletes user from the database
+        /// </summary>
+        /// <param name="userID">ID of user to be removed</param>
+        /// <returns>Returns if the deletion was successful</returns>
+        public bool DeleteUser(int userID)
+        {
+            string deleteStatement = "DELETE FROM LMSUser " +
+                                        "WHERE id = @UserID;";
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand deleteCommand = new SqlCommand(deleteStatement, connection))
+                {
+                    deleteCommand.Parameters.AddWithValue("@UserID", userID);
+
+                    int count = deleteCommand.ExecuteNonQuery();
+                    if (count > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+        }
     }
 }
