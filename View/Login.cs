@@ -20,7 +20,6 @@ namespace LeagueManagementSystem
         {
             InitializeComponent();
             loginController = new LoginController();
-            guestDashboard = new GuestDashboard();
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
@@ -77,6 +76,7 @@ namespace LeagueManagementSystem
 
         private void GuestLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            guestDashboard = new GuestDashboard();
             Hide();
             guestDashboard.ShowDialog();
             ClearForm();
