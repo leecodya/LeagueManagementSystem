@@ -75,7 +75,7 @@ namespace LeageManagementSystem.UserControls
             }
         }
 
-        private void ClearForm()
+        public void ClearForm()
         {
             leagueComboBox.SelectedIndex = -1;
             playerComboBox.SelectedIndex = -1;

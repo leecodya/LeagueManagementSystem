@@ -59,7 +59,7 @@ namespace LeageManagementSystem.UserControls
             }
         }
 
-        private void ClearForm()
+        public void ClearForm()
         {
             firstNameTextBox.Text = "";
             lastNameTextBox.Text = "";

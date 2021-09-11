@@ -71,6 +71,9 @@ namespace LeageManagementSystem.UserControls
             }            
         }
 
+        /// <summary>
+        /// Lets the control know that a regular user is using this user control
+        /// </summary>
         public void isRegularUser()
         {
             titleLabel.Text = "My Information";
@@ -78,6 +81,9 @@ namespace LeageManagementSystem.UserControls
             searchButton.Hide();
         }
 
+        /// <summary>
+        /// Lets the control know that an admin is using this user control
+        /// </summary>
         public void isAdminUser()
         {
             titleLabel.Text = "Edit Player";
@@ -95,6 +101,14 @@ namespace LeageManagementSystem.UserControls
             {
                 MessageBox.Show("Please select a player to edit", nre.GetType().ToString());
             }
+        }
+
+        public void ResetFields()
+        {
+            playerComboBox.SelectedIndex = -1;
+            firstNameTextBox.Text = "";
+            lastNameTextBox.Text = "";
+            pdgaNumTextBox.Text = "";
         }
     }
 }

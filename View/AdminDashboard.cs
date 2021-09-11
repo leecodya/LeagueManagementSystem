@@ -72,24 +72,28 @@ namespace LeageManagementSystem.View
 
         private void RegisterPlayerButton_Click(object sender, EventArgs e)
         {
+            registerPlayerUserControl1.ClearForm();
             registerPlayerUserControl1.Visible = true;
             myInformationUserControl1.Visible = false;
         }
 
         private void EditPlayerButton_Click(object sender, EventArgs e)
         {
+            myInformationUserControl1.ResetFields();
             registerPlayerUserControl1.Visible = false;
             myInformationUserControl1.Visible = true;
         }
 
         private void AddRoundButton_Click(object sender, EventArgs e)
         {
+            addRoundScoredUserControl1.ClearForm();
             addRoundScoredUserControl1.Visible = true;
             editRoundUserControl1.Visible = false;
         }
 
         private void EditRoundButton_Click(object sender, EventArgs e)
         {
+            editRoundUserControl1.ClearForm();
             addRoundScoredUserControl1.Visible = false;
             editRoundUserControl1.Visible = true;
         }
