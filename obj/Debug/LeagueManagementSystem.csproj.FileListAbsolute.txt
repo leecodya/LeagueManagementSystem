@@ -24,4 +24,3 @@ C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\
 C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeagueManagementSystem.pdb
 C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeagueManagementSystem.UserControls.AddUserUserControl.resources
 C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeagueManagementSystem.UserControls.EditUserUserControl.resources
-C:\Users\Cody Lee\Documents\Freelance Projects\LeagueManagementSystem\obj\Debug\LeagueManagementSystem.csprojAssemblyReference.cache

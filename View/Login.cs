@@ -20,8 +20,6 @@ namespace LeagueManagementSystem
         {
             InitializeComponent();
             loginController = new LoginController();
-            adminDashboard = new AdminDashboard();
-            regularDashboard = new RegularDashboard();
             guestDashboard = new GuestDashboard();
         }
 
@@ -48,6 +46,7 @@ namespace LeagueManagementSystem
             }
             else if (privileges.Equals("admin"))
             {
+                adminDashboard = new AdminDashboard();
                 adminDashboard.SetUser(newUser);
                 Hide();
                 adminDashboard.ShowDialog();
@@ -56,6 +55,7 @@ namespace LeagueManagementSystem
             }
             else if (privileges.Equals("regular"))
             {
+                regularDashboard = new RegularDashboard();
                 regularDashboard.SetUser(newUser);
                 Hide();
                 regularDashboard.ShowDialog();

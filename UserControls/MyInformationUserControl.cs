@@ -1,6 +1,7 @@
 ﻿using LeagueManagementSystem.Controller;
 using LeagueManagementSystem.Model;
 using System.Windows.Forms;
+using System;
 
 namespace LeageManagementSystem.UserControls
 {
@@ -16,6 +17,11 @@ namespace LeageManagementSystem.UserControls
             currentPlayer = new Player();
             newPlayer = new Player();
             playerController = new PlayerController();
+
+            playerComboBox.DataSource = playerController.GetSystemPlayers();
+            playerComboBox.DisplayMember = "FullNameAndPDGANumber";
+            playerComboBox.ValueMember = "id";
+            playerComboBox.SelectedIndex = -1;
         }
 
         /// <summary>
@@ -63,6 +69,32 @@ namespace LeageManagementSystem.UserControls
                 currentPlayer.LastName = newPlayer.LastName;
                 currentPlayer.PDGANumber = newPlayer.PDGANumber;
             }            
+        }
+
+        public void isRegularUser()
+        {
+            titleLabel.Text = "My Information";
+            playerComboBox.Hide();
+            searchButton.Hide();
+        }
+
+        public void isAdminUser()
+        {
+            titleLabel.Text = "Edit Player";
+        }
+
+        private void SearchButton_Click(object sender, System.EventArgs e)
+        {
+            try
+            {
+                int selectedPlayerID = (int)playerComboBox.SelectedValue;
+                Player myPlayer = playerController.GetPlayerByID(selectedPlayerID);
+                SetValues(myPlayer.FirstName, myPlayer.LastName, myPlayer.PDGANumber, selectedPlayerID);
+            }
+            catch(NullReferenceException nre)
+            {
+                MessageBox.Show("Please select a player to edit", nre.GetType().ToString());
+            }
         }
     }
 }

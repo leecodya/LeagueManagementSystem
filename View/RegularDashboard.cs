@@ -16,6 +16,8 @@ namespace LeageManagementSystem.View
             InitializeComponent();
             playerController = new PlayerController();
             user = new User();
+
+            SetMyInfoTitle();
         }
 
         public void SetUser(User newUser)
@@ -40,6 +42,9 @@ namespace LeageManagementSystem.View
             editRoundUserControl1.Visible = false;
         }
 
-        
+        private void SetMyInfoTitle()
+        {
+            myInformationUserControl1.isRegularUser();
+        }
     }
 }

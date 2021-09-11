@@ -37,6 +37,7 @@
             this.addLeaguePlayerUserControl1 = new LeageManagementSystem.UserControls.AddLeaguePlayerUserControl();
             this.addPlayersToLeagueButton = new System.Windows.Forms.Button();
             this.manageUsersTabPage = new System.Windows.Forms.TabPage();
+            this.editUserUserControl1 = new LeagueManagementSystem.UserControls.EditUserUserControl();
             this.editUserButton = new System.Windows.Forms.Button();
             this.addUserButton = new System.Windows.Forms.Button();
             this.addUserUserControl1 = new LeagueManagementSystem.UserControls.AddUserUserControl();
@@ -51,7 +52,7 @@
             this.addRoundButton = new System.Windows.Forms.Button();
             this.titleLabel = new System.Windows.Forms.Label();
             this.welcomeLabel = new System.Windows.Forms.Label();
-            this.editUserUserControl1 = new LeagueManagementSystem.UserControls.EditUserUserControl();
+            this.myInformationUserControl1 = new LeageManagementSystem.UserControls.MyInformationUserControl();
             this.adminTabControl.SuspendLayout();
             this.manageLeaguesTabPage.SuspendLayout();
             this.manageUsersTabPage.SuspendLayout();
@@ -155,6 +156,13 @@
             this.manageUsersTabPage.Text = "Manage Users";
             this.manageUsersTabPage.UseVisualStyleBackColor = true;
             // 
+            // editUserUserControl1
+            // 
+            this.editUserUserControl1.Location = new System.Drawing.Point(200, 5);
+            this.editUserUserControl1.Name = "editUserUserControl1";
+            this.editUserUserControl1.Size = new System.Drawing.Size(326, 311);
+            this.editUserUserControl1.TabIndex = 3;
+            // 
             // editUserButton
             // 
             this.editUserButton.Location = new System.Drawing.Point(20, 94);
@@ -184,6 +192,7 @@
             // 
             // managePlayersTabPage
             // 
+            this.managePlayersTabPage.Controls.Add(this.myInformationUserControl1);
             this.managePlayersTabPage.Controls.Add(this.registerPlayerUserControl1);
             this.managePlayersTabPage.Controls.Add(this.editPlayerButton);
             this.managePlayersTabPage.Controls.Add(this.registerPlayerButton);
@@ -293,12 +302,12 @@
             this.welcomeLabel.Size = new System.Drawing.Size(0, 13);
             this.welcomeLabel.TabIndex = 2;
             // 
-            // editUserUserControl1
+            // myInformationUserControl1
             // 
-            this.editUserUserControl1.Location = new System.Drawing.Point(200, 5);
-            this.editUserUserControl1.Name = "editUserUserControl1";
-            this.editUserUserControl1.Size = new System.Drawing.Size(326, 311);
-            this.editUserUserControl1.TabIndex = 3;
+            this.myInformationUserControl1.Location = new System.Drawing.Point(199, 11);
+            this.myInformationUserControl1.Name = "myInformationUserControl1";
+            this.myInformationUserControl1.Size = new System.Drawing.Size(342, 318);
+            this.myInformationUserControl1.TabIndex = 3;
             // 
             // AdminDashboard
             // 
@@ -351,5 +360,6 @@
         private System.Windows.Forms.Button editUserButton;
         private System.Windows.Forms.Button addUserButton;
         private LeagueManagementSystem.UserControls.EditUserUserControl editUserUserControl1;
+        private UserControls.MyInformationUserControl myInformationUserControl1;
     }
 }

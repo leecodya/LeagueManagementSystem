@@ -16,6 +16,8 @@ namespace LeageManagementSystem.View
             user = new User();
             playerController = new PlayerController();
 
+            SetEditPlayer();
+
             addLeagueUserControl1.Visible = true;
             addLeaguePlayerUserControl1.Visible = false;
             editLeagueUserControl1.Visible = false;
@@ -25,6 +27,9 @@ namespace LeageManagementSystem.View
 
             addUserUserControl1.Visible = true;
             editUserUserControl1.Visible = false;
+
+            registerPlayerUserControl1.Visible = true;
+            myInformationUserControl1.Visible = false;
         }
 
         public void SetUser(User newUser)
@@ -34,6 +39,11 @@ namespace LeageManagementSystem.View
             Player _player = playerController.GetPlayerByID(newUser.PlayerID);
 
             welcomeLabel.Text = "Welcome " + _player.FullName + "!";
+        }
+
+        public void SetEditPlayer()
+        {
+            myInformationUserControl1.isAdminUser();
         }
 
         private void AddPlayersToLeagueButton_Click(object sender, EventArgs e)
@@ -63,11 +73,13 @@ namespace LeageManagementSystem.View
         private void RegisterPlayerButton_Click(object sender, EventArgs e)
         {
             registerPlayerUserControl1.Visible = true;
+            myInformationUserControl1.Visible = false;
         }
 
         private void EditPlayerButton_Click(object sender, EventArgs e)
         {
             registerPlayerUserControl1.Visible = false;
+            myInformationUserControl1.Visible = true;
         }
 
         private void AddRoundButton_Click(object sender, EventArgs e)

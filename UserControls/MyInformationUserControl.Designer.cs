@@ -36,11 +36,13 @@
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
             this.pdgaNumTextBox = new System.Windows.Forms.TextBox();
             this.pdgaNumLabel = new System.Windows.Forms.Label();
+            this.playerComboBox = new System.Windows.Forms.ComboBox();
+            this.searchButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // updatePlayerButton
             // 
-            this.updatePlayerButton.Location = new System.Drawing.Point(151, 172);
+            this.updatePlayerButton.Location = new System.Drawing.Point(148, 228);
             this.updatePlayerButton.Margin = new System.Windows.Forms.Padding(2);
             this.updatePlayerButton.Name = "updatePlayerButton";
             this.updatePlayerButton.Size = new System.Drawing.Size(84, 28);
@@ -52,7 +54,7 @@
             // lastNameLabel
             // 
             this.lastNameLabel.AutoSize = true;
-            this.lastNameLabel.Location = new System.Drawing.Point(85, 96);
+            this.lastNameLabel.Location = new System.Drawing.Point(82, 152);
             this.lastNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lastNameLabel.Name = "lastNameLabel";
             this.lastNameLabel.Size = new System.Drawing.Size(61, 13);
@@ -62,7 +64,7 @@
             // firstNameLabel
             // 
             this.firstNameLabel.AutoSize = true;
-            this.firstNameLabel.Location = new System.Drawing.Point(86, 56);
+            this.firstNameLabel.Location = new System.Drawing.Point(83, 112);
             this.firstNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.firstNameLabel.Name = "firstNameLabel";
             this.firstNameLabel.Size = new System.Drawing.Size(60, 13);
@@ -82,21 +84,21 @@
             // 
             // firstNameTextBox
             // 
-            this.firstNameTextBox.Location = new System.Drawing.Point(151, 53);
+            this.firstNameTextBox.Location = new System.Drawing.Point(148, 109);
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(109, 20);
             this.firstNameTextBox.TabIndex = 26;
             // 
             // lastNameTextBox
             // 
-            this.lastNameTextBox.Location = new System.Drawing.Point(151, 93);
+            this.lastNameTextBox.Location = new System.Drawing.Point(148, 149);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(109, 20);
             this.lastNameTextBox.TabIndex = 27;
             // 
             // pdgaNumTextBox
             // 
-            this.pdgaNumTextBox.Location = new System.Drawing.Point(151, 133);
+            this.pdgaNumTextBox.Location = new System.Drawing.Point(148, 189);
             this.pdgaNumTextBox.Name = "pdgaNumTextBox";
             this.pdgaNumTextBox.Size = new System.Drawing.Size(109, 20);
             this.pdgaNumTextBox.TabIndex = 29;
@@ -104,17 +106,38 @@
             // pdgaNumLabel
             // 
             this.pdgaNumLabel.AutoSize = true;
-            this.pdgaNumLabel.Location = new System.Drawing.Point(66, 136);
+            this.pdgaNumLabel.Location = new System.Drawing.Point(63, 192);
             this.pdgaNumLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.pdgaNumLabel.Name = "pdgaNumLabel";
             this.pdgaNumLabel.Size = new System.Drawing.Size(80, 13);
             this.pdgaNumLabel.TabIndex = 28;
             this.pdgaNumLabel.Text = "PDGA Number:";
             // 
+            // playerComboBox
+            // 
+            this.playerComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.playerComboBox.FormattingEnabled = true;
+            this.playerComboBox.Location = new System.Drawing.Point(66, 58);
+            this.playerComboBox.Name = "playerComboBox";
+            this.playerComboBox.Size = new System.Drawing.Size(140, 21);
+            this.playerComboBox.TabIndex = 30;
+            // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(212, 56);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(75, 23);
+            this.searchButton.TabIndex = 31;
+            this.searchButton.Text = "Search";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            // 
             // MyInformationUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.searchButton);
+            this.Controls.Add(this.playerComboBox);
             this.Controls.Add(this.pdgaNumTextBox);
             this.Controls.Add(this.pdgaNumLabel);
             this.Controls.Add(this.lastNameTextBox);
@@ -140,5 +163,7 @@
         private System.Windows.Forms.TextBox lastNameTextBox;
         private System.Windows.Forms.TextBox pdgaNumTextBox;
         private System.Windows.Forms.Label pdgaNumLabel;
+        private System.Windows.Forms.ComboBox playerComboBox;
+        private System.Windows.Forms.Button searchButton;
     }
 }
