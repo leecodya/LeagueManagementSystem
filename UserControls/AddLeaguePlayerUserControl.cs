@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 using LeageManagementSystem.Controller;
 using LeagueManagementSystem.Controller;
@@ -50,6 +51,10 @@ namespace LeageManagementSystem.UserControls
                 {
                     MessageBox.Show("Please make sure that your round date is formatted as mm/dd/yyyy" +
                         " and that the score entered is a number", fe.GetType().ToString());
+                }
+                catch (SqlException sqle)
+                {
+                    MessageBox.Show("The selected player is already added to the selected league. Please try again", sqle.GetType().ToString());
                 }
             }
             catch (NullReferenceException nre)

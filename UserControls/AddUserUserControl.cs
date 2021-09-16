@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using LeagueManagementSystem.Controller;
 using LeagueManagementSystem.Model;
 using LeageManagementSystem.Model;
+using System.Data.SqlClient;
 
 namespace LeagueManagementSystem.UserControls
 {
@@ -81,6 +82,10 @@ namespace LeagueManagementSystem.UserControls
             catch (NullReferenceException nre)
             {
                 MessageBox.Show("Please select a privilege for this user", nre.GetType().ToString());
+            }
+            catch (SqlException sqle)
+            {
+                MessageBox.Show("That username already exists. Please try another username", sqle.GetType().ToString());
             }
         }
 

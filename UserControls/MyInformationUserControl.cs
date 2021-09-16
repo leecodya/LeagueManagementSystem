@@ -59,6 +59,7 @@ namespace LeageManagementSystem.UserControls
                 if (result)
                 {
                     MessageBox.Show("Player has been successfully updated");
+                    ResetFields();
                 }
                 else
                 {
@@ -105,6 +106,9 @@ namespace LeageManagementSystem.UserControls
 
         public void ResetFields()
         {
+            playerComboBox.DataSource = playerController.GetSystemPlayers();
+            playerComboBox.DisplayMember = "FullNameAndPDGANumber";
+            playerComboBox.ValueMember = "id";
             playerComboBox.SelectedIndex = -1;
             firstNameTextBox.Text = "";
             lastNameTextBox.Text = "";

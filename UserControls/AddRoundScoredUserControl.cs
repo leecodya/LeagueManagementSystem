@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using LeageManagementSystem.Controller;
 using System.Globalization;
+using System.Data.SqlClient;
 
 namespace LeageManagementSystem.UserControls
 {
@@ -70,6 +71,10 @@ namespace LeageManagementSystem.UserControls
                 {
                     MessageBox.Show("Please make sure that your round date is formatted as mm/dd/yyyy" +
                         " and that the score entered is a number", fe.GetType().ToString());
+                }
+                catch (SqlException sqle)
+                {
+                    MessageBox.Show("There has already been a round scored for that player for the selected league on the entered date. Please try again", sqle.GetType().ToString());
                 }
             }
             catch (NullReferenceException nre)

@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using LeagueManagementSystem.Model;
 using LeageManagementSystem.Controller;
+using System.Data.SqlClient;
 
 namespace LeageManagementSystem.UserControls
 {
@@ -71,7 +72,11 @@ namespace LeageManagementSystem.UserControls
                 {
                     MessageBox.Show("Please make sure you have a proper date format", fe.GetType().ToString());
                 }
-                
+                catch (SqlException sqle)
+                {
+                    MessageBox.Show("A league with that name already exists. Please try re-entering another name for the league", sqle.GetType().ToString());
+                }
+
             }            
         }
 

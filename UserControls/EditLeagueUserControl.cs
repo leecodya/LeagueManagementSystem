@@ -21,36 +21,43 @@ namespace LeageManagementSystem.UserControls
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            int selectedLeagueID = (int)leagueNameComboBox.SelectedValue;
-            League selectedLeague = leagueController.GetLeagueByID(selectedLeagueID);
-            string[] startDateInfo = selectedLeague.StartDate.ToString().Split(' ');
-            string[] endDateInfo = selectedLeague.EndDate.ToString().Split(' ');
+            try
+            {
+                int selectedLeagueID = (int)leagueNameComboBox.SelectedValue;
+                League selectedLeague = leagueController.GetLeagueByID(selectedLeagueID);
+                string[] startDateInfo = selectedLeague.StartDate.ToString().Split(' ');
+                string[] endDateInfo = selectedLeague.EndDate.ToString().Split(' ');
 
-            if (selectedLeague.StartDate == null)
-            {
-                startDateTextBox.Text = "";
-            }
-            else
-            {
-                startDateTextBox.Text = startDateInfo[0];
-            }
+                if (selectedLeague.StartDate == null)
+                {
+                    startDateTextBox.Text = "";
+                }
+                else
+                {
+                    startDateTextBox.Text = startDateInfo[0];
+                }
 
-            if (selectedLeague.EndDate == null)
-            {
-                endDateTextBox.Text = "";
-            }
-            else
-            {
-                endDateTextBox.Text = endDateInfo[0];
-            }
+                if (selectedLeague.EndDate == null)
+                {
+                    endDateTextBox.Text = "";
+                }
+                else
+                {
+                    endDateTextBox.Text = endDateInfo[0];
+                }
 
-            if (selectedLeague.CourseName == "")
-            {
-                courseNameTextBox.Text = "";
+                if (selectedLeague.CourseName == "")
+                {
+                    courseNameTextBox.Text = "";
+                }
+                else
+                {
+                    courseNameTextBox.Text = selectedLeague.CourseName;
+                }
             }
-            else
+            catch(NullReferenceException nre)
             {
-                courseNameTextBox.Text = selectedLeague.CourseName;
+                MessageBox.Show("Please select a league", nre.GetType().ToString());
             }
         }
 
@@ -71,59 +78,66 @@ namespace LeageManagementSystem.UserControls
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            League oldLeague = new League();
-            int selectedLeagueID = (int)leagueNameComboBox.SelectedValue;
-            oldLeague = leagueController.GetLeagueByID(selectedLeagueID);
-
             try
             {
-                if (startDateTextBox.Text.Trim().Equals(""))
-                {
-                    newLeague.StartDate = null;
-                }
-                else
-                {
-                    newLeague.StartDate = Convert.ToDateTime(startDateTextBox.Text);
-                }
+                League oldLeague = new League();
+                int selectedLeagueID = (int)leagueNameComboBox.SelectedValue;
+                oldLeague = leagueController.GetLeagueByID(selectedLeagueID);
 
-                if (endDateTextBox.Text.Trim().Equals(""))
+                try
                 {
-                    newLeague.EndDate = null;
-                }
-                else
-                {
-                    newLeague.EndDate = Convert.ToDateTime(endDateTextBox.Text);
-                }
+                    if (startDateTextBox.Text.Trim().Equals(""))
+                    {
+                        newLeague.StartDate = null;
+                    }
+                    else
+                    {
+                        newLeague.StartDate = Convert.ToDateTime(startDateTextBox.Text);
+                    }
 
-                if (courseNameTextBox.Text.Trim().Equals(""))
-                {
-                    newLeague.CourseName = "";
+                    if (endDateTextBox.Text.Trim().Equals(""))
+                    {
+                        newLeague.EndDate = null;
+                    }
+                    else
+                    {
+                        newLeague.EndDate = Convert.ToDateTime(endDateTextBox.Text);
+                    }
+
+                    if (courseNameTextBox.Text.Trim().Equals(""))
+                    {
+                        newLeague.CourseName = "";
+                    }
+                    else
+                    {
+                        newLeague.CourseName = courseNameTextBox.Text;
+                    }
+
+                    bool result = leagueController.UpdateLeague(oldLeague, newLeague);
+
+                    if (result)
+                    {
+                        MessageBox.Show("League has been successfully updated!");
+                        ResetFields();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong when updating the league");
+                    }
+
+                    oldLeague.StartDate = newLeague.StartDate;
+                    oldLeague.EndDate = newLeague.EndDate;
+                    oldLeague.CourseName = newLeague.CourseName;
                 }
-                else
+                catch (FormatException fe)
                 {
-                    newLeague.CourseName = courseNameTextBox.Text;
-                }                
-
-                bool result = leagueController.UpdateLeague(oldLeague, newLeague);
-
-                if (result)
-                {
-                    MessageBox.Show("League has been successfully updated!");
-                    ResetFields();
-
+                    MessageBox.Show("Please make sure you have a proper date format", fe.GetType().ToString());
                 }
-                else
-                {
-                    MessageBox.Show("Something went wrong when updating the league");
-                }
-
-                oldLeague.StartDate = newLeague.StartDate;
-                oldLeague.EndDate = newLeague.EndDate;
-                oldLeague.CourseName = newLeague.CourseName;
             }
-            catch (FormatException fe)
+            catch (NullReferenceException nre)
             {
-                MessageBox.Show("Please make sure you have a proper date format", fe.GetType().ToString());
+                MessageBox.Show("Please select a league", nre.GetType().ToString());
             }
         }
 
