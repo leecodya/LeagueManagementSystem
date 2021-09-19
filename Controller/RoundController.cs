@@ -1,4 +1,6 @@
 ﻿using LeageManagementSystem.DAL;
+using LeageManagementSystem.Model;
+using System;
 using System.Collections.Generic;
 
 namespace LeageManagementSystem.Controller
@@ -21,14 +23,11 @@ namespace LeageManagementSystem.Controller
         /// <summary>
         /// Method to use AddRound method in roundDAL to add a new scored round
         /// </summary>
-        /// <param name="selectedLeagueID">ID of the selected league</param>
-        /// <param name="selectedPlayerID">ID of the select player</param>
-        /// <param name="dateOfRound">Date the round took place</param>
-        /// <param name="score">Score of round played by the particular player for the league</param>
+        /// <param name="newRound">Round to be added</param>
         /// <returns>Returns if the round wass successfully added</returns>
-        public bool AddRoundScore(int selectedLeagueID, int selectedPlayerID, string dateOfRound, int score)
+        public bool AddRoundScore(Round newRound)
         {
-            return roundDAL.AddRound(selectedLeagueID, selectedPlayerID, dateOfRound, score);
+            return roundDAL.AddRound(newRound);
         }
 
         /// <summary>

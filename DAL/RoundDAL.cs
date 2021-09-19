@@ -1,4 +1,5 @@
-﻿using LeagueManagementSystem.DAL;
+﻿using LeageManagementSystem.Model;
+using LeagueManagementSystem.DAL;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -14,12 +15,9 @@ namespace LeageManagementSystem.DAL
         /// <summary>
         /// Adds a new record to the Round table
         /// </summary>
-        /// <param name="selectedLeagueID">ID of the selected league</param>
-        /// <param name="selectedPlayerID">ID of the select player</param>
-        /// <param name="dateOfRound">Date the round took place</param>
-        /// <param name="score">Score of round played by the particular player for the league</param>
+        /// <param name="newRound">New round to be added</param>
         /// <returns>Returns if the round wass successfully added</returns>
-        public bool AddRound(int selectedLeagueID, int selectedPlayerID, string dateOfRound, int score)
+        public bool AddRound(Round newRound)
         {
             string insertStatement =
                 "INSERT INTO Round " +
@@ -31,17 +29,10 @@ namespace LeageManagementSystem.DAL
                 connection.Open();
                 using (SqlCommand cmd = new SqlCommand(insertStatement, connection))
                 {
-                    cmd.Parameters.Add("@LeagueID", System.Data.SqlDbType.Int);
-                    cmd.Parameters["@LeagueID"].Value = selectedLeagueID;
-
-                    cmd.Parameters.Add("@PlayerID", System.Data.SqlDbType.Int);
-                    cmd.Parameters["@PlayerID"].Value = selectedPlayerID;
-
-                    cmd.Parameters.Add("@DateOfRound", System.Data.SqlDbType.VarChar);
-                    cmd.Parameters["@DateOfRound"].Value = dateOfRound;
-
-                    cmd.Parameters.Add("@Score", System.Data.SqlDbType.Int);
-                    cmd.Parameters["@Score"].Value = score;
+                    cmd.Parameters.AddWithValue("@LeagueID", newRound.LeagueID);
+                    cmd.Parameters.AddWithValue("@PlayerID", newRound.PlayerID);
+                    cmd.Parameters.AddWithValue("@DateOfRound", newRound.DateOfRound);
+                    cmd.Parameters.AddWithValue("@Score", newRound.Score);
 
                     int count = cmd.ExecuteNonQuery();
                     if (count > 0)
